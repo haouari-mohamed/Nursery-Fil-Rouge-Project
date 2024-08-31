@@ -29,10 +29,18 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/generateToken", "/auth/register").permitAll()
-                        .requestMatchers("/auth/**").permitAll()
-                        .anyRequest().authenticated()
-                )
+                        .anyRequest().permitAll()
+//                        .requestMatchers("/auth/generateToken", "/auth/register").permitAll()
+//                        .requestMatchers("/api/auth/**").permitAll()
+//                        .requestMatchers("/api/children/**").permitAll()
+//                        .requestMatchers("/api/creches/**").permitAll()
+//                        .requestMatchers("/api/evenements/**").permitAll()
+//                        .requestMatchers("/api/paniers/**").permitAll()
+//                        .requestMatchers("/api/parents/**").permitAll()
+//                        .requestMatchers("/api/reservations/**").permitAll()
+//                        .requestMatchers("/api/superviseurs/**").permitAll()
+//                        .anyRequest().authenticated()
+             )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
