@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SuperviseurService {
-  private apiUrl = 'http://your-api-url/api/superviseurs';
+  private apiUrl = 'http://localhost:8888/api/superviseurs';
 
   constructor(private http: HttpClient) {}
 

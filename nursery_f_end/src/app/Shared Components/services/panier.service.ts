@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PanierService {
-  private apiUrl = 'http://your-api-url/api/paniers';
+  private apiUrl = 'http://localhost:8888/api/paniers';
 
   constructor(private http: HttpClient) {}
 
