@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChildService {
-  private apiUrl = 'http://your-api-url/api/children';
+  private apiUrl = 'http://localhost:8888/api/children';
 
   constructor(private http: HttpClient) {}
 
