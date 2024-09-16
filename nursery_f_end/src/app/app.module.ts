@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module'; 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Core Components/header/header.component';
 import { FooterComponent } from './Core Components/footer/footer.component';
@@ -22,37 +23,41 @@ import { AvailabilityManagementComponent } from './admin/availability-management
 import { SupervisorProfileComponent } from './admin/supervisor-profile/supervisor-profile.component';
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
-
+import { AuthInterceptor } from './interceptors/interceptors.component';
 
 @NgModule({
   declarations: [
-
-  
+    AppComponent,
     HeaderComponent,
-        FooterComponent,
-        NavigationComponent,
-        LoginComponent,
-        RegisterComponent,
-        ForgotPasswordComponent,
-        HomeComponent,
-        NurserySearchComponent,
-        MapComponent,
-        NurseryListComponent,
-        NurseryDetailComponent,
-        ReviewComponent,
-        ContactFormComponent,
-        DashboardComponent,
-        NurseryProfileComponent,
-        AvailabilityManagementComponent,
-        SupervisorProfileComponent,
-        ParentInquiryComponent,
-        ListManagementComponent
+    FooterComponent,
+    NavigationComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    HomeComponent,
+    NurserySearchComponent,
+    MapComponent,
+    NurseryListComponent,
+    NurseryDetailComponent,
+    ReviewComponent,
+    ContactFormComponent,
+    DashboardComponent,
+    NurseryProfileComponent,
+    AvailabilityManagementComponent,
+    SupervisorProfileComponent,
+    ParentInquiryComponent,
+    ListManagementComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    ReactiveFormsModule ,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,8 +4,13 @@ export interface User {
     name: string;
     prenom: string;
     email: string;
-    password: string;
-    type: UserType;
+    password?: string;
+    type: UserType; 
+   /*  role?: string; */
+  }
+  export interface AuthResponse {
+    token: string;
+    roles?: string[];
   }
   
   export enum UserType {
@@ -14,7 +19,10 @@ export interface User {
     ADMINISTRATEUR = 'ADMINISTRATEUR'
   }
   
-  // uperviseur
+  
+  // superviseur
+ 
+
   export interface Superviseur extends User {
     creche: Creche;
     profil: string;

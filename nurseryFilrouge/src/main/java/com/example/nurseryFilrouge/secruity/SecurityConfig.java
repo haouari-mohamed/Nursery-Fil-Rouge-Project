@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers("/auth/generateToken", "/auth/register").permitAll()
+//                        .requestMatchers("/auth/generateToken", "/auth/register").permitAll()
                         .anyRequest().permitAll()
 
 //                        .requestMatchers("/api/auth/**").permitAll()
