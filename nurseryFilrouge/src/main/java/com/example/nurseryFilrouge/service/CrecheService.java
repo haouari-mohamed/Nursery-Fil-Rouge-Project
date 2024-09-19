@@ -35,5 +35,9 @@ public class CrecheService {
             creche.setTarifs(updatedCreche.getTarifs());
             crecheRepository.save(creche);
         }
+
+    }
+    public List<Creche> getAllCreches() {
+        return crecheRepository.findAll();
     }
 }

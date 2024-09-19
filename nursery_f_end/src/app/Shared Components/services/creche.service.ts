@@ -1,24 +1,40 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Creche } from '../models/global.model';  
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private apiUrl = 'http://localhost:8888/auth';
+export class CrecheService {
+  private apiUrl = 'http://localhost:8888/api/creches'
 
   constructor(private http: HttpClient) {}
 
-  register(user: any): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/register`, user);
+  // Search for crèches by city (ville)
+  searchCreches(ville: string): Observable<Creche[]> {
+    const url = `${this.apiUrl}/search?ville=${ville}`;
+    return this.http.get<Creche[]>(url);
   }
 
-  generateToken(authRequest: any): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/generateToken`, authRequest);
+  // Get crèche details by ID
+  getCreche(crecheId: number): Observable<Creche> {
+    const url = `${this.apiUrl}/${crecheId}`;
+    return this.http.get<Creche>(url);
   }
 
-  hello(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl}/hello`);
+  // Update crèche details
+  updateCreche(crecheId: number, updatedCreche: Creche): Observable<void> {
+    const url = `${this.apiUrl}/${crecheId}`;
+    return this.http.put<void>(url, updatedCreche, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
+
+  
+  getAllCreches(): Observable<Creche[]> {
+    return this.http.get<Creche[]>(this.apiUrl);
   }
 }
