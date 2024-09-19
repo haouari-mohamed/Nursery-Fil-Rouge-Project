@@ -1,1 +1,19 @@
-<p>availability-management works!</p>
+<h2>Event Availability Management</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Creche</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of evenements">
+      <td>{{ event.nom }}</td>
+      <td>{{ event.description }}</td>
+      <td>{{ event.date | date }}</td>
+      <td>{{ event.creche.nom }}</td>
+    </tr>
+  </tbody>
+</table>
