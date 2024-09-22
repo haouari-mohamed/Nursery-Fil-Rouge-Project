@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -25,13 +25,12 @@ export class AuthService {
         this.rolesSubject.next(response.roles);
         console.log('Roles:', response.roles); 
       }),
-      catchError(error => {
-        console.error('Login failed', error);
-        throw error;
-      })
     );
   }
-  
+
+  register(name: string, prenom :string, username: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, {name, prenom, username, password});}
+
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.rolesKey);  

@@ -9,23 +9,47 @@ import { AuthService } from '../../Shared Components/services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
   registerForm: FormGroup;
+  errorMessage: string = '';
+  successMessage: string = '';
+  isLoading: boolean = false;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
   ) {
-    this.registerForm = this.fb.group({
+    this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       prenom: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      type: ['', Validators.required]
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
- 
+  createAccount()  {
+    if (this.registerForm.valid) {
+      const { name, prenom, username, password } = this.registerForm.value;
+      this.authService.register(name, prenom, username, password).subscribe(
+        response => {
+          console.log('Registration successful', response);
+          // Redirect or handle post-registration logic
+          this.router.navigate(['/login']); // Assuming you have a login route
+        },
+        error => {
+          console.error('Registration error:', error);
+          this.errorMessage = 'Registration failed. Please try again.';
+        }
+      );
+    }
+  }
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+
+}
+
 }

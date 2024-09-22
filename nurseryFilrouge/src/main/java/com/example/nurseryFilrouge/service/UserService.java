@@ -1,6 +1,7 @@
 package com.example.nurseryFilrouge.service;
 
 import com.example.nurseryFilrouge.model.User;
+import com.example.nurseryFilrouge.model.enums.UserType;
 import com.example.nurseryFilrouge.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,6 +27,9 @@ public class UserService implements UserDetailsService {
     }
 
     public String addUser(User userInfo) {
+        if (userInfo.getType() == null) {
+            userInfo.setType(UserType.PARENT);
+        }
         userInfo.setPassword(encoder.encode(userInfo.getPassword()));
         repository.save(userInfo);
         return "User Added Successfully";

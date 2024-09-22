@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module'; 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -24,6 +24,9 @@ import { SupervisorProfileComponent } from './admin/supervisor-profile/superviso
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
+import { Header2Component } from './Core Components/header2/header2.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+/* import { EventComponent } from './admin/event/event.component'; */
 
 @NgModule({
   declarations: [
@@ -46,14 +49,18 @@ import { AuthInterceptor } from './interceptors/interceptors.component';
     AvailabilityManagementComponent,
     SupervisorProfileComponent,
     ParentInquiryComponent,
-    ListManagementComponent
+    ListManagementComponent,
+    Header2Component,
+    SidebarComponent,
+  /*   EventComponent */
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     ReactiveFormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

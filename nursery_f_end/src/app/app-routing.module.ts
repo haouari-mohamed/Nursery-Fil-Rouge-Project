@@ -8,27 +8,33 @@ import { SupervisorProfileComponent } from './admin/supervisor-profile/superviso
 import { RegisterComponent } from './auth/register/register.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
-import { HeaderComponent } from './Core Components/header/header.component';
-import { FooterComponent } from './Core Components/footer/footer.component';
+import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'registre', component: RegisterComponent},
-  { path: 'admin', component: DashboardComponent/* , canActivate: [AuthGuard], data: { role: 'ADMINISTRATEUR' } */ },
-  { path: 'superviseur', component: SupervisorProfileComponent,/*  canActivate: [AuthGuard], data: { role: 'SUPERVISEUR' } */ },
+  { path: 'register', component: RegisterComponent },
+  { 
+    path: 'admin', 
+    component: DashboardComponent, 
+   /*  canActivate: [AuthGuard],
+    data: { role: 'ADMINISTRATEUR' }, */
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'supervisor-profile', component: SupervisorProfileComponent },
+      { path: 'nursery-profile', component: NurseryProfileComponent },
+      { path: 'parent-management', component: ParentInquiryComponent },
+    /*   { path: 'events', component: EventsComponent }, */
+      { path: 'availability-management', component: AvailabilityManagementComponent },
+     /*  { path: 'contacts', component: ContactsComponent } */
+    ]
+  },
+  { path: 'superviseur', component: SupervisorProfileComponent, canActivate: [AuthGuard], data: { role: 'SUPERVISEUR' } },
   { path: 'user/home', component: HomeComponent, canActivate: [AuthGuard], data: { role: 'PARENT' } },
-  { path: 'admin/nursery-profile', component: NurseryProfileComponent },
-  { path: 'admin/availability-management', component: AvailabilityManagementComponent },
-  { path: 'supervisor-profile', component: SupervisorProfileComponent },
-  {path: 'header', component: HeaderComponent},
-  {path: 'footer', component: FooterComponent}
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
