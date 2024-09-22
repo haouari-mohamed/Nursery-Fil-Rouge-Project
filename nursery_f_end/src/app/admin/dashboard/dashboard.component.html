@@ -1,8 +1,56 @@
-<h1>Admin Dashboard</h1>
+
 <div class="dashboard">
-  <button routerLink="/admin/nursery-profile">Manage Nursery Profiles</button>
-  <button routerLink="/admin/availability-management">Manage Availability</button>
-  <button routerLink="/admin/list-management">List Management</button>
-  <button routerLink="/admin/supervisor-profile">Supervisor Profiles</button>
-  <button routerLink="/admin/parent-inquiry">Parent Inquiries</button>
+  <app-sidebar></app-sidebar>
+  <main class="main-content">
+    <header class="header">
+      
+      <div class="user-info">
+        <img src="assets/images/placeholder-avatar.jpg" alt="Admin" class="user-avatar">
+        <div class="user-details">
+          <div class="user-name">Admin</div>
+          <div class="user-role">Administration</div>
+        </div>
+        <i class="fas fa-bell notification-icon"></i>
+      </div>
+    </header>
+    <section class="welcome-banner">
+      <div class="welcome-text">
+        <p>{{ currentDate | date:'MMMM d, yyyy' }}</p>
+        <h2>Welcome back, {{ adminName }}!</h2>
+        <p>Always stay updated in your Nursery Information</p>
+      </div>
+      <div class="welcome-icons">
+        <i class="fas fa-graduation-cap icon-large"></i>
+        <i class="fas fa-backpack icon-large"></i>
+        <i class="fas fa-user-graduate icon-large"></i>
+      </div>
+    </section>
+    <div class="content-wrapper">
+      
+      <section class="nursery-list">
+        <div class="Nures">
+        <h1>Nursery List</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" class="search-input">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        </div>
+        <div class="list-container">
+          
+          <app-nursery-list></app-nursery-list>
+        </div>
+      </section>
+      <section class="daily-notice">
+        <div class="notice-header">
+          <h3 class="notice-title">Daily notice</h3>
+          <a href="#" class="see-all">See all</a>
+        </div>
+        <div *ngFor="let notice of dailyNotices" class="notice-card">
+          <h4>{{ notice.title }}</h4>
+          <p>{{ notice.description }}</p>
+          <a href="#">See more</a>
+        </div>
+      </section>
+    </div>
+  </main>
 </div>
