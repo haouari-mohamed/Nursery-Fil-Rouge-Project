@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './user/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -9,6 +9,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+import { NurseryListComponent } from './user/nursery-list/nursery-list.component';
+import { ListManagementComponent } from './admin/list-management/list-management.component';
 
 
 const routes: Routes = [
@@ -30,10 +32,13 @@ const routes: Routes = [
     /*   { path: 'events', component: EventsComponent }, */
       { path: 'availability-management', component: AvailabilityManagementComponent },
      /*  { path: 'contacts', component: ContactsComponent } */
+    
     ]
   },
   { path: 'superviseur', component: SupervisorProfileComponent, canActivate: [AuthGuard], data: { role: 'SUPERVISEUR' } },
   { path: 'user/home', component: HomeComponent, canActivate: [AuthGuard], data: { role: 'PARENT' } },
+  {path: 'list', component: NurseryListComponent},
+  {path: 'listmangement', component: ListManagementComponent}
 ];
 
 @NgModule({

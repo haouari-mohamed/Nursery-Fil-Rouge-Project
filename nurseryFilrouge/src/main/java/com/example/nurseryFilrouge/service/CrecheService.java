@@ -38,6 +38,11 @@ public class CrecheService {
 
     }
     public List<Creche> getAllCreches() {
+
         return crecheRepository.findAll();
     }
+    public void deleteCreche(Long crecheId) {
+        crecheRepository.deleteById(crecheId);
+    }
+
 }

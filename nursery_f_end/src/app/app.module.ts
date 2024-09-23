@@ -26,6 +26,10 @@ import { ListManagementComponent } from './admin/list-management/list-management
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button'
+import { MatTableModule } from '@angular/material/table';
+import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheader.component';
 /* import { EventComponent } from './admin/event/event.component'; */
 
 @NgModule({
@@ -52,6 +56,7 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
     ListManagementComponent,
     Header2Component,
     SidebarComponent,
+    DashboardheaderComponent,
   /*   EventComponent */
     
   ],
@@ -60,7 +65,10 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
     AppRoutingModule, 
     ReactiveFormsModule ,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
+    BrowserAnimationsModule, 
+    MatButtonModule,
+    MatTableModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

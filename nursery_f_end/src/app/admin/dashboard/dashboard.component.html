@@ -2,17 +2,7 @@
 <div class="dashboard">
   <app-sidebar></app-sidebar>
   <main class="main-content">
-    <header class="header">
-      
-      <div class="user-info">
-        <img src="assets/images/placeholder-avatar.jpg" alt="Admin" class="user-avatar">
-        <div class="user-details">
-          <div class="user-name">Admin</div>
-          <div class="user-role">Administration</div>
-        </div>
-        <i class="fas fa-bell notification-icon"></i>
-      </div>
-    </header>
+  <app-dashboardheader></app-dashboardheader>
     <section class="welcome-banner">
       <div class="welcome-text">
         <p>{{ currentDate | date:'MMMM d, yyyy' }}</p>
