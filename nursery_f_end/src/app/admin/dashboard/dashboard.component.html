@@ -1,0 +1,46 @@
+
+<div class="dashboard">
+  <app-sidebar></app-sidebar>
+  <main class="main-content">
+  <app-dashboardheader></app-dashboardheader>
+    <section class="welcome-banner">
+      <div class="welcome-text">
+        <p>{{ currentDate | date:'MMMM d, yyyy' }}</p>
+        <h2>Welcome back, {{ adminName }}!</h2>
+        <p>Always stay updated in your Nursery Information</p>
+      </div>
+      <div class="welcome-icons">
+        <i class="fas fa-graduation-cap icon-large"></i>
+        <i class="fas fa-backpack icon-large"></i>
+        <i class="fas fa-user-graduate icon-large"></i>
+      </div>
+    </section>
+    <div class="content-wrapper">
+      
+      <section class="nursery-list">
+        <div class="Nures">
+        <h1>Nursery List</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" class="search-input">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        </div>
+        <div class="list-container">
+          
+          <app-nursery-list></app-nursery-list>
+        </div>
+      </section>
+      <section class="daily-notice">
+        <div class="notice-header">
+          <h3 class="notice-title">Daily notice</h3>
+          <a href="#" class="see-all">See all</a>
+        </div>
+        <div *ngFor="let notice of dailyNotices" class="notice-card">
+          <h4>{{ notice.title }}</h4>
+          <p>{{ notice.description }}</p>
+          <a href="#">See more</a>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

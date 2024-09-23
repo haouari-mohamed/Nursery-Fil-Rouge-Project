@@ -1,0 +1,19 @@
+<h2>Nursery Profiles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Capacity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let creche of creches">
+      <td>{{ creche.nom }}</td>
+      <td>{{ creche.adresse }}</td>
+      <td>{{ creche.ville }}</td>
+      <td>{{ creche.capacite }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -36,17 +36,17 @@ public class CrecheController {
         crecheService.updateCreche(crecheId, updatedCreche);
         return ResponseEntity.ok().build();
     }
-<<<<<<< refs/remotes/origin/nursery_b_end
-=======
+
     @GetMapping
     public ResponseEntity<List<Creche>> getAllCreches() {
         return ResponseEntity.ok(crecheService.getAllCreches());
     }
+
     @DeleteMapping("/{crecheId}")
     public ResponseEntity<Void> deleteCreche(@PathVariable Long crecheId) {
         crecheService.deleteCreche(crecheId);
         return ResponseEntity.noContent().build();
     }
 
->>>>>>> local
+
 }

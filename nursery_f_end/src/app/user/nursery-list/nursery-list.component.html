@@ -1,0 +1,31 @@
+<mat-table [dataSource]="creches">
+    
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="nom">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nom}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="codePostal">
+        <mat-header-cell *matHeaderCellDef> Postal Code </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.codePostal}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ville">
+        <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ville}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="capacite">
+        <mat-header-cell *matHeaderCellDef> Capacite </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.capacite}} </mat-cell>
+      </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  

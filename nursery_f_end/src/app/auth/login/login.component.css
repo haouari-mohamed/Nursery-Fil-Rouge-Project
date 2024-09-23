@@ -1,0 +1,143 @@
+:host {
+    display: contents;
+  }
+  
+  .login-container {
+    display: flex;
+    align-items: center;
+    gap: 40px 100px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    margin-top: 50px;
+   
+  }
+  
+  .side-image {
+    border-radius: 0 4px 4px 0;
+    background-color: #ef4444;
+    align-self: stretch;
+    display: flex;
+   /*  min-width: 240px; */
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    margin: auto 0;
+    padding: 124px 1px;
+    width: 705px;
+    height: 343px;
+  }
+  .background-image {
+    aspect-ratio: 1.51;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none; 
+    border: none;  
+  }
+.login-form-container {
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto 0;
+}
+
+.login-header {
+  display: flex;
+  max-width: 100%;
+  width: 370px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.login-title {
+  letter-spacing: 1.44px;
+  font: 500 36px/1 Inter, sans-serif;
+  color: var(--Text2, #000);
+}
+
+.login-subtitle {
+  margin-top: 24px;
+  font: 400 16px Poppins, sans-serif;
+  color: var(--Text2, #000);
+}
+
+.login-form {
+  display: flex;
+  margin-top: 48px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.form-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.form-label {
+  color: var(--Text2, #000);
+  opacity: 0.4;
+  font: 400 16px Poppins, sans-serif;
+}
+
+.form-input {
+  margin-top: 8px;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 8px 0;
+  font: 400 16px Poppins, sans-serif;
+  background: transparent;
+}
+
+.form-actions {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  gap: 40px 87px;
+  justify-content: flex-start;
+  font: 16px Poppins, sans-serif;
+}
+
+.login-button {
+  border-radius: 50px;
+  background: var(--Button2, #db4444);
+  color: var(--Text, #fafafa);
+  font-weight: 500;
+  padding: 16px 48px;
+  border: none;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--Secondary-2, #db4444);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .side-image {
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  .background-image {
+    max-width: 100%;
+  }
+
+  .login-form {
+    margin-top: 40px;
+  }
+
+  .login-button {
+    padding: 16px 20px;
+  }
+}

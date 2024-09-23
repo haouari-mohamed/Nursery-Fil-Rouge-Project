@@ -35,5 +35,14 @@ public class CrecheService {
             creche.setTarifs(updatedCreche.getTarifs());
             crecheRepository.save(creche);
         }
+
     }
+    public List<Creche> getAllCreches() {
+
+        return crecheRepository.findAll();
+    }
+    public void deleteCreche(Long crecheId) {
+        crecheRepository.deleteById(crecheId);
+    }
+
 }

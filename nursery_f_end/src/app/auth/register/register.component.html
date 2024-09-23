@@ -1,0 +1,36 @@
+<app-header></app-header>
+<main class="create-account-container">
+  <section class="side-image">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/793e44df019d5685298c59952ca4fa6a54b611d60274e728dd8cbc0d794a2d36?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Decorative side image" class="side-image__img" />
+  </section>
+  <section class="form-section">
+    <header class="form-header">
+      <h1 class="form-title">Create an account</h1>
+      <p class="form-subtitle">Enter your details below</p>
+    </header>
+    <form [formGroup]="registerForm" (ngSubmit)="createAccount()" class="account-form">
+      <div class="form-group">
+        <input type="text" formControlName="name" placeholder="First Name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <input type="text" formControlName="prenom" placeholder="Family Name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <input type="email" formControlName="username" placeholder="Email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <input type="password" formControlName="password" placeholder="Password" class="form-input" required>
+      </div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+      <button type="submit" class="submit-button" [disabled]="registerForm.invalid || isLoading">
+        {{ isLoading ? 'Creating Account...' : 'Create Account' }}
+      </button>
+    </form>
+    <footer class="form-footer">
+      <p class="login-prompt">Already have account?</p>
+      <button (click)="navigateToLogin()" class="login-link">Log in</button>
+    </footer>
+  </section>
+</main>
+<app-footer></app-footer>

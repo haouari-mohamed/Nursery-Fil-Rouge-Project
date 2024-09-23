@@ -1,0 +1,193 @@
+
+    .footer {
+      background: var(--Button, #000);
+      color: var(--Text, #fafafa);
+      padding: 80px 0 0%;
+      font-family: Poppins, sans-serif;
+      margin-top: 40px;
+    
+      
+    }
+
+    .footer-content {
+      display: flex;
+       flex-wrap: wrap; 
+      /* justify-content: center; */
+      gap: 40px 70px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+     
+    }
+
+    .brand-section {
+      width: 217px;
+    }
+
+    .brand-logo {
+      font: 700 24px/1 Inter, sans-serif;
+      letter-spacing: 0.72px;
+      width: 217px;
+    }
+
+    .subscribe-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 24px;
+      width: 217px;
+    }
+
+    .offer-text {
+      margin-top: 24px;
+      font-size: 16px;
+      width: 217px;
+    }
+
+    .email-form {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--Text, #fafafa);
+      border-radius: 4px;
+      margin-top: 16px;
+      padding: 12px 16px;
+      width: 200px;
+
+    }
+
+    .email-input {
+      background: transparent;
+      border: none;
+      color: var(--Text, #fafafa);
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .submit-icon {
+      width: 24px;
+      height: 24px;
+    }
+   /*  section{
+        width: 200px;
+    } */
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .support-address,
+    .account-links,
+    .quick-links {
+      font-size: 16px;
+      line-height: 1.5;
+      width: 120px;
+    }
+
+    .account-links,
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      width: 120px;
+    }
+
+    .account-links li,
+    .quick-links li {
+      margin-bottom: 16px;
+    }
+
+    .account-links a,
+    .quick-links a {
+      color: var(--Text, #fafafa);
+      text-decoration: none;
+    }
+
+    .app-offer {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .app-stores {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .qr-code {
+      width: 80px;
+      height: 80px;
+    }
+
+    .store-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .store-button {
+      width: 110px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      width: 150px;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-bottom {
+      margin-top: 86px;
+      padding: 16px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .copyright {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 16px;
+    }
+
+    .copyright-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+   /*  p{
+        width: 200px;
+    } */
+
+    @media (max-width: 991px) {
+      .footer-content {
+        max-width: 100%;
+      }
+
+      .footer-bottom {
+        margin-top: 40px;
+      }
+    }

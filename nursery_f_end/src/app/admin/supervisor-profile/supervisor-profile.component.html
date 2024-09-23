@@ -1,0 +1,19 @@
+<h2>Supervisor Profiles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Creche</th>
+      <th>Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let superviseur of superviseurs">
+      <td>{{ superviseur.nom }} {{ superviseur.prenom }}</td>
+      <td>{{ superviseur.email }}</td>
+      <td>{{ superviseur.creche.nom }}</td>
+      <td>{{ superviseur.profil }}</td>
+    </tr>
+  </tbody>
+</table>

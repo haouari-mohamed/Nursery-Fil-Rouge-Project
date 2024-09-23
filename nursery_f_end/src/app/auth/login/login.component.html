@@ -1,0 +1,38 @@
+<app-header></app-header>
+<main class="login-container">
+  <section class="side-image">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/793e44df019d5685298c59952ca4fa6a54b611d60274e728dd8cbc0d794a2d36?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Login background image" class="background-image" />
+  </section>
+  <section class="login-form-container">
+    <header class="login-header">
+      <h1 class="login-title">Log in to Exclusive</h1>
+      <p class="login-subtitle">Enter your details below</p>
+    </header>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="username" class="visually-hidden">Email </label>
+        <input type="text" id="username" formControlName="username" placeholder="Enter your Email" class="form-input" required>
+       
+        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="error-message">
+          <div *ngIf="loginForm.get('username')?.errors?.['required']">Email is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="visually-hidden">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter Password" class="form-input" required>
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">
+          <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" [disabled]="loginForm.invalid || loading" class="login-button">
+          {{ loading ? 'Logging in...' : 'Log In' }}
+        </button>
+        <!-- <a href="#" class="forgot-password" (click)="onForgotPassword()">Forget Password?</a> -->
+      </div>
+    </form>
+    
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </section>
+</main>
+<app-footer></app-footer>
