@@ -40,4 +40,6 @@ public class CrecheController {
     public ResponseEntity<List<Creche>> getAllCreches() {
         return ResponseEntity.ok(crecheService.getAllCreches());
     }
+   
+
 }

@@ -23,7 +23,7 @@ export class CrecheService {
     return this.http.get<Creche>(url);
   }
 
-  // Update crèche details
+  // Update crèche detai
   updateCreche(crecheId: number, updatedCreche: Creche): Observable<void> {
     const url = `${this.apiUrl}/${crecheId}`;
     return this.http.put<void>(url, updatedCreche, {
