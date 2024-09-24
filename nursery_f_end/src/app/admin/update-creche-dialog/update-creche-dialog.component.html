@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Modifier la crèche</h2>
+<mat-dialog-content>
+  <form [formGroup]="crecheForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" readonly>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom" required>
+        <mat-error *ngIf="crecheForm.get('nom')?.hasError('required')">Le nom est requis</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Adresse</mat-label>
+        <input matInput formControlName="adresse" required>
+        <mat-error *ngIf="crecheForm.get('adresse')?.hasError('required')">L'adresse est requise</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Code Postal</mat-label>
+        <input matInput formControlName="codePostal" required>
+        <mat-error *ngIf="crecheForm.get('codePostal')?.hasError('required')">Le code postal est requis</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Ville</mat-label>
+        <input matInput formControlName="ville" required>
+        <mat-error *ngIf="crecheForm.get('ville')?.hasError('required')">La ville est requise</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Capacité</mat-label>
+        <input matInput type="number" formControlName="capacite" required>
+        <mat-error *ngIf="crecheForm.get('capacite')?.hasError('required')">La capacité est requise</mat-error>
+        <mat-error *ngIf="crecheForm.get('capacite')?.hasError('min')">La capacité doit être supérieure à 0</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Horaires d'Ouverture</mat-label>
+        <input matInput formControlName="horairesOuverture" required>
+        <mat-error *ngIf="crecheForm.get('horairesOuverture')?.hasError('required')">Les horaires sont requis</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Tarifs</mat-label>
+        <input matInput formControlName="tarifs">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions >
+  <button mat-button (click)="onCancel()">Annuler</button>
+  <button mat-raised-button color="primary" [disabled]="!crecheForm.valid" (click)="onSubmit()">Mettre à jour</button>
+</mat-dialog-actions>

@@ -30,6 +30,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button'
 import { MatTableModule } from '@angular/material/table';
 import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheader.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+/* import { FlexLayoutModule } from '@angular/flex-layout'; */
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { UpdateCrecheDialogComponent } from './admin/update-creche-dialog/update-creche-dialog.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+
+
 /* import { EventComponent } from './admin/event/event.component'; */
 
 @NgModule({
@@ -57,6 +66,7 @@ import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheade
     Header2Component,
     SidebarComponent,
     DashboardheaderComponent,
+    UpdateCrecheDialogComponent,
   /*   EventComponent */
     
   ],
@@ -69,6 +79,15 @@ import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheade
     BrowserAnimationsModule, 
     MatButtonModule,
     MatTableModule,
+    MatIconModule,
+    MatDialogModule,
+    /* FlexLayoutModule, */
+    MatFormFieldModule,
+    MatInputModule,
+    
+    MatCardModule,
+   
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

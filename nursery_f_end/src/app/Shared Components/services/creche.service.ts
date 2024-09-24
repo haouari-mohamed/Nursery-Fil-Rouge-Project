@@ -11,6 +11,10 @@ export class CrecheService {
 
   constructor(private http: HttpClient) {}
 
+  addCreche(creche: Creche): Observable<Creche> {
+    return this.http.post<Creche>(`${this.apiUrl}/add`, creche);
+  }
+
   // Search for crèches by city (ville)
   searchCreches(ville: string): Observable<Creche[]> {
     const url = `${this.apiUrl}/search?ville=${ville}`;
@@ -37,4 +41,11 @@ export class CrecheService {
   getAllCreches(): Observable<Creche[]> {
     return this.http.get<Creche[]>(this.apiUrl);
   }
+  //delete 
+
+  deleteCreche(crecheId: number): Observable<void> {
+    const url = `${this.apiUrl}/${crecheId}`;
+    return this.http.delete<void>(url);
+  }
+  
 }

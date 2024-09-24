@@ -16,6 +16,12 @@ public class CrecheController {
     @Autowired
     private CrecheService crecheService;
 
+    @PostMapping("/add")
+    public ResponseEntity<Creche> addCreche(@RequestBody Creche creche) {
+        Creche newCreche = crecheService.addCreche(creche);
+        return ResponseEntity.ok(newCreche);
+    }
+
     @GetMapping("/search")
     public ResponseEntity<List<Creche>> searchCreches(@RequestParam String ville) {
         return ResponseEntity.ok(crecheService.searchCreches(ville));
@@ -40,6 +46,11 @@ public class CrecheController {
     public ResponseEntity<List<Creche>> getAllCreches() {
         return ResponseEntity.ok(crecheService.getAllCreches());
     }
-   
+
+//    @DeleteMapping("/{crecheId}")
+//    public ResponseEntity<Void> deleteCreche(@PathVariable Long crecheId) {
+//        crecheService.deleteCreche(crecheId);
+//        return ResponseEntity.noContent().build();
+//    }
 
 }

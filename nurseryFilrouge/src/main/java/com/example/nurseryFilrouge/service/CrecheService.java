@@ -13,6 +13,10 @@ public class CrecheService {
     @Autowired
     private CrecheRepository crecheRepository;
 
+    public Creche addCreche(Creche creche) {
+        return crecheRepository.save(creche);
+    }
+
     public List<Creche> searchCreches(String ville) {
         return crecheRepository.findByVille(ville);
     }
@@ -41,8 +45,17 @@ public class CrecheService {
 
         return crecheRepository.findAll();
     }
-    public void deleteCreche(Long crecheId) {
-        crecheRepository.deleteById(crecheId);
-    }
+//    public void deleteCreche(Long crecheId) {
+//        Optional<Creche> crecheOptional = crecheRepository.findById(crecheId);
+//        if (crecheOptional.isPresent()) {
+//            Creche creche = crecheOptional.get();
+//            // Remove the associated children first
+//            if (creche.getChildren() != null) {
+//                creche.getChildren().clear(); // Clear the child
+//            }
+//            crecheRepository.delete(creche);
+//        }
+//    }
+
 
 }
