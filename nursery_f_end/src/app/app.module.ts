@@ -37,6 +37,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateCrecheDialogComponent } from './admin/update-creche-dialog/update-creche-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 
 
 /* import { EventComponent } from './admin/event/event.component'; */
@@ -67,6 +68,7 @@ import { MatCardModule } from '@angular/material/card';
     SidebarComponent,
     DashboardheaderComponent,
     UpdateCrecheDialogComponent,
+    EventMangementComponent,
   /*   EventComponent */
     
   ],

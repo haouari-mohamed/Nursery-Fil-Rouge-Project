@@ -1,0 +1,150 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000;
+    font: 400 14px Poppins, sans-serif;
+  }
+  
+  .breadcrumb-item {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .breadcrumb-item.active {
+    opacity: 0.5;
+  }
+  
+  .contact-container {
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+    align-items: center;
+   /*  justify-content: space-around; */
+    justify-content: center;
+    gap: 100px;
+   
+   /*  gap: 14px; */
+  
+  }
+  
+  .contact-info,
+  .contact-form {
+    flex-grow: 0,5;
+    min-width: 100px;
+  }
+  
+  .info-card {
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 13px rgba(0, 0, 0, 0.05);
+    padding: 30px 25px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .info-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+  
+  .info-content {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .phone-number {
+    margin-top: 12px;
+  }
+  
+  .divider {
+    margin: 24px 0;
+    border: none;
+    border-top: 1px solid #000;
+  }
+  
+  .contact-form {
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 13px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 550px;
+   /*  margin: 0 auto; */
+   margin-left: 30px;
+   height: 400px;
+  }
+   .form-row {
+    display: flex;
+    gap: 20px;
+  
+  }
+  .classinfo{
+   
+    width: 500px;
+  }
+  .form-group {
+    flex: 1 1 200px;
+    margin-bottom: 24px;
+    width: 540px;
+  }
+
+  
+  .form-control {
+    width: 90%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    font: 400 14px Poppins, sans-serif;
+  
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  .required-field::after {
+    content: '*';
+    color: #db4444;
+    margin-left: 4px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    background-color: #db4444;
+    color: #fafafa;
+    font: 500 14px Poppins, sans-serif;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .contact-container {
+      margin-top: 30px;
+      flex-direction: column;
+    }
+  
+    .info-card,
+    .contact-form {
+      padding: 20px;
+      max-width: 100%;
+    }
+  
+    .form-group {
+      flex-basis: 100%;
+    }
+  }
+  
