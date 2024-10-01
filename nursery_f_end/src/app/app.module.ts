@@ -38,6 +38,7 @@ import { UpdateCrecheDialogComponent } from './admin/update-creche-dialog/update
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
+import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-dialog.component';
 
 
 /* import { EventComponent } from './admin/event/event.component'; */
@@ -69,6 +70,7 @@ import { EventMangementComponent } from './admin/event-mangement/event-mangement
     DashboardheaderComponent,
     UpdateCrecheDialogComponent,
     EventMangementComponent,
+    AddCrecheDialogComponent,
   /*   EventComponent */
     
   ],

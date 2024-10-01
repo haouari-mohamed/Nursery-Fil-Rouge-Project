@@ -79,7 +79,14 @@
     box-shadow: 0 4px 49px rgba(0, 0, 0, 0.15);
     margin-left: 20px;
   }
-  
+  /* .cta-button {
+    margin-top: 40px;
+    padding: 15px 25px;
+  } */
+  .cta-button a {
+    text-decoration: none; 
+    color: inherit; 
+}
   .hero-image-wrapper {
     flex: 1;
     min-width: 240px;
@@ -306,10 +313,7 @@
       line-height: 1.475;
     }
   
-    .cta-button {
-      margin-top: 40px;
-      padding: 15px 25px;
-    }
+   
   
     .programs-section {
       padding: 40px 20px;
