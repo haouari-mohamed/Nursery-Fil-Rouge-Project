@@ -27,21 +27,23 @@ import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheader.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-/* import { FlexLayoutModule } from '@angular/flex-layout'; */
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateCrecheDialogComponent } from './admin/update-creche-dialog/update-creche-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-dialog.component';
+import { EventDialogComponent } from './admin/event-dialog/event-dialog.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select'; 
 
 
-/* import { EventComponent } from './admin/event/event.component'; */
 
 @NgModule({
   declarations: [
@@ -71,13 +73,12 @@ import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-d
     UpdateCrecheDialogComponent,
     EventMangementComponent,
     AddCrecheDialogComponent,
-  /*   EventComponent */
-    
+    EventDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, 
@@ -85,13 +86,12 @@ import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-d
     MatTableModule,
     MatIconModule,
     MatDialogModule,
-    /* FlexLayoutModule, */
     MatFormFieldModule,
     MatInputModule,
-    
     MatCardModule,
-   
-   
+    MatNativeDateModule, 
+    MatDatepickerModule, 
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
