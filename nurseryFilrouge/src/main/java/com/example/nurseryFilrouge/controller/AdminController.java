@@ -41,4 +41,7 @@ public class AdminController {
         List<User> users = administrationService.surveillerActivites();
         return ResponseEntity.ok(users);
     }
+
+
+
 }

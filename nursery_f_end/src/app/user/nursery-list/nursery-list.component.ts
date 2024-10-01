@@ -19,6 +19,6 @@ export class NurseryListComponent implements OnInit {
     this.crecheService.getAllCreches().subscribe(data => {
       this.creches = data;
     });
-    console.log(this.creches)
+  
   }
 }

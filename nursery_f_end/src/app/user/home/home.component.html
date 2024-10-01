@@ -1,31 +1,151 @@
-<div>
-    <h2>Event List</h2>
-    <ul>
-      <li *ngFor="let evenement of evenements">
-        {{ evenement.nom }} - {{ evenement.date }}
-      </li>
-    </ul>
-  
-    <div *ngIf="error" class="error">
-      {{ error }}
-    </div>
-  
-    <button (click)="loadEvenementById(1)">Load Event with ID 1</button>
-    <button (click)="createEvenement({ name: 'New Event', date: '2024-09-01' })">
-      Create Event
-    </button>
-    <button (click)="updateEvenement(1, { name: 'Updated Event', date: '2024-09-02' })">
-      Update Event with ID 1
-    </button>
-    <button (click)="deleteEvenement(1)">Delete Event with ID 1</button>
-  
-    <div *ngIf="evenement">
-      <h3>Event Details</h3>
-      <p>{{ evenement.name }} - {{ evenement.date }}</p>
-    </div>
+<app-header></app-header>
 
-    <div>
-      <a href="/list">the list</a>
+<div class="section">
+<header class="header">
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-title-light">Discover the perfect</span>
+        <!-- <span class="hero-title-bold"></span> -->
+        <br />
+        Nursery for your Little One
+      </h1>
+      <p class="hero-description">
+        Explore our network of loving nursery, each offering unique experience for your child's growth and happiness;
+      </p>
+      <button class="cta-button">Let's get started!</button>
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/70f6f784af12482fb273744b2659daa3a3899a5fa3c420627a5071dfc3588f91?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Happy children in nursery" class="hero-image" />
     </div>
   </div>
-  
+</header>
+
+<main>
+  <section class="programs-section">
+    <h2 class="section-title">Our Nurturing Programs</h2>
+    <div class="program-cards">
+      <article class="program-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1279711b2bb548de0c3ba96416d2e46af1329178d72e16b1e5cfada11c2df657?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Early Learning Program" class="program-icon" />
+        <h3 class="program-title">Early Learning</h3>
+        <p class="program-description">Age-appropriate activities to stimulate cognitive development and curiosity.</p>
+      </article>
+      <article class="program-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/60b3684e23cb0898c91866df2990326c1ad0bf890aa29ec3f7f5d7869be69f05?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Creative Arts Program" class="program-icon" />
+        <h3 class="program-title">Creative Arts</h3>
+        <p class="program-description">Engaging in music, dance, and art to foster self-expression and creativity.</p>
+      </article>
+      <article class="program-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cfb8a38fbf3f6f6115879aa54d08dd9785a8546cb9c5022fc3b2bcdb7d881b2?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Physical Development Program" class="program-icon" />
+        <h3 class="program-title">Physical Development</h3>
+        <p class="program-description">Fun activities to enhance motor skills and promote healthy physical growth.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-content">
+      <h2 class="section-title">What Parents Say</h2>
+      <blockquote class="testimonial-quote">
+        "Little Learners has been a second home for our daughter. The staff's dedication and the nurturing environment have helped her blossom."
+      </blockquote>
+      <cite class="testimonial-author">Sarah Johnson, Parent</cite>
+    </div>
+    <div class="testimonial-video">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a30dcd6f96825518627a7e1f86c1a1f09bf76fe004db689dc276958d77e0b92f?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Parent testimonial video thumbnail" class="video-thumbnail" />
+      <button class="play-button" aria-label="Play testimonial video">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3fa6b823f8d6d598a7c90720feb4bd10d9cd239bf26db385b0d2e52bc05e945?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="" class="play-icon" />
+      </button>
+    </div>
+  </section>
+
+  <section class="approach-section">
+    <h2 class="section-title">Our Approach to Early Childhood Education</h2>
+    <div class="approach-cards">
+
+      <section class="sectionimg">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a30dcd6f96825518627a7e1f86c1a1f09bf76fe004db689dc276958d77e0b92f?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="" class="video-thumbnail" id="img">
+
+        <article class="approach-card">
+          <h3 class="approach-title">Child-Centered Learning</h3>
+          <p class="approach-description">
+            We believe in following each child's interests and developmental pace,
+            <span class="highlight">creating personalized learning</span> experiences that ignite curiosity and foster a love for learning.
+          </p>
+        </article>
+
+
+
+      </section>
+     
+      <section class="sectionimg">
+        <article class="approach-card">
+          <h3 class="approach-title">Play-Based Curriculum</h3>
+          <p class="approach-description">
+            Our curriculum integrates play with purposeful learning activities, allowing children to explore, experiment, and discover in a fun and engaging environment.
+          </p>
+        </article>
+        <img   src="https://cdn.builder.io/api/v1/image/assets/TEMP/a30dcd6f96825518627a7e1f86c1a1f09bf76fe004db689dc276958d77e0b92f?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="" class="video-thumbnail" id="img">
+
+      </section>
+      <section class="sectionimg">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a30dcd6f96825518627a7e1f86c1a1f09bf76fe004db689dc276958d77e0b92f?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="" class="video-thumbnail" id="img">
+
+        <article class="approach-card">
+          <h3 class="approach-title">Play-Based Curriculum</h3>
+          <p class="approach-description">
+            Our curriculum integrates play with purposeful learning activities, allowing children to explore, experiment, and discover in a fun and engaging environment.
+          </p>
+        </article>
+
+
+
+      </section>
+     
+    </div>
+  </section>
+
+  <section class="daily-schedule-section">
+    <h2 class="section-title">A Day at Little Learners</h2>
+    <div class="schedule-cards">
+      <article class="schedule-card">
+        <span class="schedule-number">#1</span>
+        <h3 class="schedule-title">Morning Welcome</h3>
+        <p class="schedule-description">Warm greetings and free play to start the day on a positive note.</p>
+      </article>
+      <article class="schedule-card">
+        <span class="schedule-number">#2</span>
+        <h3 class="schedule-title">Outdoor Play</h3>
+        <p class="schedule-description">Physical activities and nature exploration in our safe outdoor space.</p>
+      </article>
+      <article class="schedule-card">
+        <span class="schedule-number">#3</span>
+        <h3 class="schedule-title">Circle Time</h3>
+        <p class="schedule-description">Group activities focusing on language, music, and social skills.</p>
+      </article>
+      <article class="schedule-card">
+        <span class="schedule-number">#4</span>
+        <h3 class="schedule-title">Social Skills</h3>
+        <p class="schedule-description">Nursery provides opportunities for children to engage and interact with other kids, helping them learn how to share, cooperate, and play together.</p>
+      </article>
+      <article class="schedule-card">
+        <span class="schedule-number">#5</span>
+        <h3 class="schedule-title">Learning Centers</h3>
+        <p class="schedule-description">Guided exploration of various learning areas tailored to each child's interests.</p>
+      </article>
+      <article class="schedule-card">
+        <span class="schedule-number">#6</span>
+        <h3 class="schedule-title">Emotional Development</h3>
+        <p class="schedule-description">Children learn how to control their emotions, manage frustration, and express their feelings appropriately.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="cta-title">Give Your Child the Best Start</h2>
+    <button class="cta-button">Contact Us Today</button>
+  </section>
+</main>
+
+</div>
+<app-footer></app-footer>

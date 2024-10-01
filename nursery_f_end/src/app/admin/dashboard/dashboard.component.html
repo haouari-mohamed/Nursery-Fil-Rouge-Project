@@ -19,7 +19,7 @@
       
       <section class="nursery-list">
         <div class="Nures">
-        <h1>Nursery List</h1>
+        <h1 class="notice-title">Nursery List</h1>
         <div class="search-bar">
           <input type="text" placeholder="Search" class="search-input">
           <i class="fas fa-search search-icon"></i>
@@ -32,13 +32,15 @@
       </section>
       <section class="daily-notice">
         <div class="notice-header">
-          <h3 class="notice-title">Daily notice</h3>
+          <h3 class="notice-title">Event</h3>
           <a href="#" class="see-all">See all</a>
         </div>
-        <div *ngFor="let notice of dailyNotices" class="notice-card">
-          <h4>{{ notice.title }}</h4>
-          <p>{{ notice.description }}</p>
-          <a href="#">See more</a>
+        <div *ngFor="let event of events " class="notice-card">
+        
+          <p>{{ event.description }}</p>
+          <p><strong>Date: </strong>{{ event.date | date:'longDate' }}</p>
+          <p><strong>Event: </strong>{{ event.nom }}</p>
+          <a href="/eventmanagement">See more</a>
         </div>
       </section>
     </div>

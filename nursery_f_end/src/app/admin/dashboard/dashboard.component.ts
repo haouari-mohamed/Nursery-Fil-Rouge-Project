@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Evenement } from 'src/app/Shared Components/models/global.model';
+import { EvenementService } from 'src/app/Shared Components/services/evenement.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,16 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   currentDate: Date = new Date();
-  adminName: string = 'Admin'; // Replace with actual admin name
-  dailyNotices: any[] = [
-    { title: 'Exam schedule', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { title: 'Parent-Teacher Meeting', description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis.' },
-    { title: 'Holiday Notice', description: 'Class ut facilisis in lectus proin egestas volutpat metus.' }
-  ];
+  adminName: string = 'Admin'; 
+  events: Evenement[] = [];
 
-  constructor() { }
+  constructor(private evenementService: EvenementService) { }
 
   ngOnInit(): void {
-    // Add any initialization logic here
+    this.loadEvenements();
+  }
+
+  loadEvenements(): void {
+    this.evenementService.getAllEvenements().subscribe(
+      (data: Evenement[]) => {
+        this.events = data; 
+      },
+      (error) => {
+        console.error('Error fetching events', error);
+      }
+    );
   }
 }

@@ -1,7 +1,25 @@
-<div class="dashboard">
-    <app-sidebar></app-sidebar>
-    <main class="main-content">
-    <app-dashboardheader></app-dashboardheader>
 
-    </main>
+<div class="dashboard">
+  <app-sidebar></app-sidebar>
+  <main class="main-content">
+    <app-dashboardheader></app-dashboardheader>
+    <div class="creche-list-container">
+      <mat-card *ngFor="let creche of creches" class="creche-card">
+        <mat-card-header>
+          <mat-card-title>{{ creche.nom }}</mat-card-title>
+          <mat-card-subtitle>ID: {{ creche.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Ville: {{ creche.ville }}</p>
+          <p>Adresse: {{ creche.adresse }}</p>
+          <p>Téléphone: {{ creche.capacite }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="openUpdateDialog(creche)">
+            <mat-icon>edit</mat-icon> Modifier
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </main>
 </div>

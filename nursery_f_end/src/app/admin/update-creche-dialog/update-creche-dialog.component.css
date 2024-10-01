@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  mat-dialog-content {
+    padding-top: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .form-row mat-form-field {
+    flex: 1;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-dialog-actions {
+    padding: 16px 0;
+  }

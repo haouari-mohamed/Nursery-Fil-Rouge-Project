@@ -28,4 +28,7 @@ public class Creche {
 
     @OneToMany(mappedBy =  "creche")
     private List<Superviseur> superviseurs;
+
+//    @OneToMany(mappedBy = "creche", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Child> children;
 }
