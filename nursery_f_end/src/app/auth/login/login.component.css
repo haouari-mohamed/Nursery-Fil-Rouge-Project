@@ -23,7 +23,7 @@
   margin: auto 0;
   padding: 124px 1px;
   width: 705px;
-  height: 343px;
+ /*  height: 343px; */
   transition: transform 0.5s ease, rotate 0.5s ease; /* Animation on hover */
 }
 
