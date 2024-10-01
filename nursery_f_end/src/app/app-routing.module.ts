@@ -8,7 +8,7 @@ import { SupervisorProfileComponent } from './admin/supervisor-profile/superviso
 import { RegisterComponent } from './auth/register/register.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
-import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+import { ParentInquiryComponent } from './admin/parent-management/parent-inquiry.component';
 import { NurseryListComponent } from './user/nursery-list/nursery-list.component';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { ContactFormComponent } from './user/contact-form/contact-form.component';
