@@ -42,11 +42,13 @@ public class CrecheController {
         crecheService.updateCreche(crecheId, updatedCreche);
         return ResponseEntity.ok().build();
     }
+
     @GetMapping
     public ResponseEntity<List<Creche>> getAllCreches() {
         return ResponseEntity.ok(crecheService.getAllCreches());
     }
 
+ nursery_f_end
 //    @DeleteMapping("/{crecheId}")
 //    public ResponseEntity<Void> deleteCreche(@PathVariable Long crecheId) {
 //        crecheService.deleteCreche(crecheId);
