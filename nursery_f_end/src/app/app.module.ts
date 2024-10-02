@@ -45,6 +45,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
+import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
 
 
 
@@ -79,6 +80,7 @@ import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/cont
     EventDialogComponent,
     ContactMessagesComponent,
     ContactDetailDialogComponent,
+    EurrorPageComponent,
   ],
   imports: [
     BrowserModule,

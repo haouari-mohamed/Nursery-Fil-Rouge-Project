@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       prenom: ['', Validators.required],
-      username: ['', [Validators.required, Validators.email]], // Change username to email
+      username: ['', [Validators.required, Validators.email]], 
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -54,6 +54,6 @@ export class RegisterComponent implements OnInit {
   }
 
   navigateToLogin(): void {
-    this.router.navigate(['/login']); // Adjust the path as per your routing configuration
+    this.router.navigate(['/login']); 
   }
 }

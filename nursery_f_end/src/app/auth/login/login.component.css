@@ -24,11 +24,11 @@
   padding: 124px 1px;
   width: 705px;
  /*  height: 343px; */
-  transition: transform 0.5s ease, rotate 0.5s ease; /* Animation on hover */
+  transition: transform 0.5s ease, rotate 0.5s ease; 
 }
 
 .side-image:hover {
-  transform: scale(1.05) rotate(2deg); /* Image scaling and slight rotation */
+  transform: scale(1.05) rotate(2deg); 
 }
 
 .background-image {
@@ -36,7 +36,7 @@
   object-fit: contain;
   object-position: center;
   width: 100%;
-  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  transition: transform 0.3s ease-in-out; 
 }
 
 input:focus {
@@ -126,9 +126,9 @@ input:focus {
 }
 
 .login-button:hover {
-  background: linear-gradient(45deg, #ff8c00, #ff4444); /* Gradient change */
-  transform: scale(1.05); /* Slight button enlargement */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+  background: linear-gradient(45deg, #ff8c00, #ff4444); 
+  transform: scale(1.05); 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .forgot-password {
@@ -139,7 +139,36 @@ input:focus {
 }
 
 .forgot-password:hover {
-  color: #ff8c00; /* Color change on hover */
+  color: #ff8c00; 
+}
+.form-footer {
+  display: flex;
+ justify-content: space-around;
+  margin-top: 16px;
+  align-items: center;
+  color: var(--Text2, #000);
+  
+}
+
+.login-prompt {
+  font-weight: 400;
+  opacity: 0.7;
+  align-self: stretch;
+  margin: auto 0;
+}
+.login-link {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  justify-content: flex-start;
+  width: 47px;
+  margin: auto 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
 }
 
 @media (max-width: 991px) {
