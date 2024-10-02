@@ -5,7 +5,7 @@
   </section>
   <section class="form-section">
     <header class="form-header">
-      <h1 class="form-title">Create an account</h1>
+      <h1 class="form-title">Create an Account</h1>
       <p class="form-subtitle">Enter your details below</p>
     </header>
     <form [formGroup]="registerForm" (ngSubmit)="createAccount()" class="account-form">
@@ -17,9 +17,17 @@
       </div>
       <div class="form-group">
         <input type="email" formControlName="username" placeholder="Email" class="form-input" required>
+        <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)" class="error-message">
+          <div *ngIf="registerForm.get('username')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="registerForm.get('username')?.errors?.['email']">Invalid email format.</div>
+        </div>
       </div>
       <div class="form-group">
         <input type="password" formControlName="password" placeholder="Password" class="form-input" required>
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="error-message">
+          <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
+          <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</div>
+        </div>
       </div>
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
       <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
@@ -28,7 +36,7 @@
       </button>
     </form>
     <footer class="form-footer">
-      <p class="login-prompt">Already have account?</p>
+      <p class="login-prompt">Already have an account?</p>
       <button (click)="navigateToLogin()" class="login-link">Log in</button>
     </footer>
   </section>

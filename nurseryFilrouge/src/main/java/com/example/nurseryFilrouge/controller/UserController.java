@@ -34,8 +34,10 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> addNewUser(@RequestBody User user) {
-        String response = service.addUser(user);
+    public ResponseEntity<Map<String, String>> addNewUser(@RequestBody User user) {
+        String responseMessage = service.addUser(user); 
+        Map<String, String> response = new HashMap<>();
+        response.put("message", responseMessage);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
