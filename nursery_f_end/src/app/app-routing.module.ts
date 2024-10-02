@@ -8,12 +8,14 @@ import { SupervisorProfileComponent } from './admin/supervisor-profile/superviso
 import { RegisterComponent } from './auth/register/register.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
-import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+
 import { NurseryListComponent } from './user/nursery-list/nursery-list.component';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { ContactFormComponent } from './user/contact-form/contact-form.component';
 import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 import { Header2Component } from './Core Components/header2/header2.component';
+import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 
 
 const routes: Routes = [
@@ -45,7 +47,8 @@ const routes: Routes = [
   {path: 'listmangement', component: ListManagementComponent},
   {path: 'contact', component: ContactFormComponent},
   {path: 'eventmanagement', component: EventMangementComponent},
-  {path: 'header2', component: Header2Component}
+  {path: 'header2', component: Header2Component},
+  {path: 'contactadmin', component : ContactMessagesComponent}
 ];
 
 @NgModule({

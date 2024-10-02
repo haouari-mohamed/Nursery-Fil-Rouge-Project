@@ -1,0 +1,36 @@
+<h2 mat-dialog-title class="dialog-title">{{ data.id ? 'Edit Event' : 'Add Event' }}</h2>
+<mat-dialog-content class="dialog-content">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.nom" name="nom" required>
+    <mat-error *ngIf="!data.nom">Name is required.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="data.description" name="description" required></textarea>
+    <mat-error *ngIf="!data.description">Description is required.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Date</mat-label>
+    <input matInput [(ngModel)]="data.date" [matDatepicker]="picker" name="date" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="!data.date">Date is required.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Creche</mat-label>
+    <mat-select [(ngModel)]="data.creche.id" name="creche" required>
+      <mat-option *ngFor="let creche of creches" [value]="creche.id">
+        {{ creche.nom }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="!data.creche.id">Creche selection is required.</mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>

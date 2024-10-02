@@ -92,3 +92,12 @@ export interface User {
   export interface Administration extends User {
     creches: Creche[];
   }
+
+  //contact
+  export interface ContactMessage {
+    id?: number;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}

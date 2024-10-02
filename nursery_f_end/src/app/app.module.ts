@@ -21,27 +21,32 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
 import { SupervisorProfileComponent } from './admin/supervisor-profile/supervisor-profile.component';
-import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { DashboardheaderComponent } from './admin/dashboardheader/dashboardheader.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-/* import { FlexLayoutModule } from '@angular/flex-layout'; */
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateCrecheDialogComponent } from './admin/update-creche-dialog/update-creche-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-dialog.component';
+import { EventDialogComponent } from './admin/event-dialog/event-dialog.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select'; 
+import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
+import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
 
 
-/* import { EventComponent } from './admin/event/event.component'; */
 
 @NgModule({
   declarations: [
@@ -71,13 +76,14 @@ import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-d
     UpdateCrecheDialogComponent,
     EventMangementComponent,
     AddCrecheDialogComponent,
-  /*   EventComponent */
-    
+    EventDialogComponent,
+    ContactMessagesComponent,
+    ContactDetailDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, 
@@ -85,13 +91,12 @@ import { AddCrecheDialogComponent } from './admin/add-creche-dialog/add-creche-d
     MatTableModule,
     MatIconModule,
     MatDialogModule,
-    /* FlexLayoutModule, */
     MatFormFieldModule,
     MatInputModule,
-    
     MatCardModule,
-   
-   
+    MatNativeDateModule, 
+    MatDatepickerModule, 
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
