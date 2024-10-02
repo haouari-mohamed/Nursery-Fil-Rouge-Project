@@ -46,6 +46,7 @@ import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.co
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
+import { AboutComponent } from './user/about/about.component';
 
 
 
@@ -81,6 +82,7 @@ import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.c
     ContactMessagesComponent,
     ContactDetailDialogComponent,
     EurrorPageComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,7 @@ import { Header2Component } from './Core Components/header2/header2.component';
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
+import { AboutComponent } from './user/about/about.component';
 
 
 const routes: Routes = [
@@ -50,7 +51,8 @@ const routes: Routes = [
   {path: 'eventmanagement', component: EventMangementComponent},
   {path: 'header2', component: Header2Component},
   {path: 'contactadmin', component : ContactMessagesComponent},
-  {path: 'eurror', component: EurrorPageComponent}
+  {path: 'eurror', component: EurrorPageComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({
