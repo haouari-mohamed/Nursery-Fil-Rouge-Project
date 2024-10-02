@@ -28,8 +28,10 @@ export class AuthService {
     );
   }
 
-  register(name: string, prenom :string, username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, {name, prenom, username, password});}
+  register(name: string, prenom: string, email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, { name, prenom, email, password });
+}
+
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
