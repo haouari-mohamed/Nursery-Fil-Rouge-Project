@@ -1,63 +1,69 @@
 <app-header2></app-header2>
 
-<!-- <header class="breadcrumb">
-    <nav>
-      <a href="/" class="breadcrumb-item">Home</a>
-      <span class="breadcrumb-item active">Contact</span>
-    </nav>
-  </header> -->
-  
-  <main class="contact-container">
-    <section class="contact-info">
-      <article class="info-card">
-        <div class="info-item">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2294fbd9f04939aff5db1becfbe77fb51ff3bfaac158ee6057c742697c3f64e0?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Phone icon" class="info-icon" />
-          <h2 class="info-title">Call To Us</h2>
-        </div>
-        <div class="info-content">
-          <p>We are available 24/7, 7 days a week.</p>
-          <p class="phone-number">Phone: +212719179419</p>
-        </div>
-        <hr class="divider" />
-        <div class="info-item">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/78ce634fd57696e4af7a0dd0217c81b3d24659ea00c5b91dd9cc701749c73926?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Email icon" class="info-icon" />
-          <h2 class="info-title">Write To Us</h2>
-        </div>
-        <div class="info-content">
-          <p>Fill out our form and we will contact you within 24 hours.</p>
-          <p>Emails: mohamed.haouari.com</p>
-          <p>Emails: support.mohamed.com</p>
-        </div>
-      </article>
-    </section>
-  
+<main class="contact-container">
+  <section class="contact-info">
+    <article class="info-card">
+      <div class="info-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2294fbd9f04939aff5db1becfbe77fb51ff3bfaac158ee6057c742697c3f64e0?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Phone icon" class="info-icon" />
+        <h2 class="info-title">Call To Us</h2>
+      </div>
+      <div class="info-content">
+        <p>We are available 24/7, 7 days a week.</p>
+        <p class="phone-number">Phone: +212719179419</p>
+      </div>
+      <hr class="divider" />
+      <div class="info-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/78ce634fd57696e4af7a0dd0217c81b3d24659ea00c5b91dd9cc701749c73926?placeholderIfAbsent=true&apiKey=ab889b82711947a0965d604e3de5426f" alt="Email icon" class="info-icon" />
+        <h2 class="info-title">Write To Us</h2>
+      </div>
+      <div class="info-content">
+        <p>Fill out our form and we will contact you within 24 hours.</p>
+        <p>Emails: mohamed.haouari.com</p>
+        <p>Emails: support.mohamed.com</p>
+      </div>
+    </article>
+  </section>
+
     <section class="contact-form">
-      <form>
+      <!-- Success Alert -->
+      <div *ngIf="messageSent" class="alert alert-success" role="alert">
+        Your message has been sent successfully!
+        <button type="button" class="close" (click)="closeAlert()">
+          <span>&times;</span>
+        </button>
+      </div>
+    
+      <!-- Error Alert -->
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+    
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="classinfo">
-
-            <div class="form-row">
-                <div class="form-group" id="form">
-                  <label for="name" class="required-field">Your Name</label>
-                  <input type="text" id="name" class="form-control" required />
-                </div>
-                <div  id="form">
-                  <label for="email" class="required-field">Your Email</label>
-                  <input type="email" id="email" class="form-control" required />
-                </div>
-                <div class="form-group">
-                  <label for="phone" class="required-field">Your Phone</label>
-                  <input type="tel" id="phone" class="form-control" required />
-                </div>
-              </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="required-field">Your Name</label>
+              <input type="text" id="name" class="form-control" formControlName="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email" class="required-field">Your Email</label>
+              <input type="email" id="email" class="form-control" formControlName="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone" class="required-field">Your Phone</label>
+              <input type="tel" id="phone" class="form-control" formControlName="phone" required />
+            </div>
+          </div>
         </div>
-       
-
+    
         <div class="form-group">
           <label for="message">Your Message</label>
-          <textarea id="message" class="form-control" rows="6"></textarea>
+          <textarea id="message" class="form-control" rows="6" formControlName="message"></textarea>
         </div>
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">Send Message</button>
       </form>
     </section>
-  </main>
-  <app-footer></app-footer>
+    
+</main>
+
+<app-footer></app-footer>

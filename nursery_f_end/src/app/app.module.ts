@@ -21,7 +21,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
 import { SupervisorProfileComponent } from './admin/supervisor-profile/supervisor-profile.component';
-import { ParentInquiryComponent } from './admin/parent-management/parent-inquiry.component';
+
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
@@ -42,6 +42,9 @@ import { EventDialogComponent } from './admin/event-dialog/event-dialog.componen
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select'; 
+import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
+import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
+import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
 
 
 
@@ -74,6 +77,8 @@ import { MatSelectModule } from '@angular/material/select';
     EventMangementComponent,
     AddCrecheDialogComponent,
     EventDialogComponent,
+    ContactMessagesComponent,
+    ContactDetailDialogComponent,
   ],
   imports: [
     BrowserModule,
