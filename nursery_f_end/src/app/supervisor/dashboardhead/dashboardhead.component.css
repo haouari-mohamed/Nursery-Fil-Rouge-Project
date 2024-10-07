@@ -1,0 +1,14 @@
+.user-details {
+    margin-right: 1rem;
+  }
+  .user-info { 
+    display: flex; 
+    align-items: center; 
+  
+  }
+  .header { 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    margin-bottom: 2rem; 
+  }

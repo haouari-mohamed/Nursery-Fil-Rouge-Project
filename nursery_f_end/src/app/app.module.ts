@@ -25,7 +25,7 @@ import { SupervisorProfileComponent } from './admin/supervisor-profile/superviso
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
-import { SidebarComponent } from './admin/sidebar/sidebar.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
@@ -47,6 +47,12 @@ import { ContactMessagesComponent } from './admin/contact-messages/contact-messa
 import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
 import { AboutComponent } from './user/about/about.component';
+import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
+import { EventlistComponent } from './supervisor/eventlist/eventlist.component';
+import { EventmangementComponent } from './supervisor/eventmangement/eventmangement.component';
+import { DashboardheadComponent } from './supervisor/dashboardhead/dashboardhead.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
 
 
 
@@ -74,6 +80,7 @@ import { AboutComponent } from './user/about/about.component';
     ListManagementComponent,
     Header2Component,
     SidebarComponent,
+    SidebarSupComponent,
     DashboardheaderComponent,
     UpdateCrecheDialogComponent,
     EventMangementComponent,
@@ -83,6 +90,10 @@ import { AboutComponent } from './user/about/about.component';
     ContactDetailDialogComponent,
     EurrorPageComponent,
     AboutComponent,
+    SupervisorDashboardComponent,
+    EventlistComponent,
+    EventmangementComponent,
+    DashboardheadComponent,
   ],
   imports: [
     BrowserModule,

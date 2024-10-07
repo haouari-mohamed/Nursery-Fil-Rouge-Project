@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/home']);
             break;
           case UserType.SUPERVISEUR:
-            this.router.navigate(['/superviseur-dashboard']);
+            this.router.navigate(['/superviseur']);
             break;
           case UserType.ADMINISTRATEUR:
             this.router.navigate(['/admin']);

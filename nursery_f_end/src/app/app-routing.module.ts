@@ -18,6 +18,7 @@ import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.co
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
 import { AboutComponent } from './user/about/about.component';
+import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
 
 
 const routes: Routes = [
@@ -25,9 +26,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  {path : 'superviseur', component : SupervisorDashboardComponent},
   { 
     path: 'admin', 
     component: DashboardComponent, 
+
    /*  canActivate: [AuthGuard],
     data: { role: 'ADMINISTRATEUR' }, */
     children: [
@@ -43,8 +46,8 @@ const routes: Routes = [
     
     ]
   },
-  { path: 'superviseur', component: SupervisorProfileComponent, canActivate: [AuthGuard], data: { role: 'SUPERVISEUR' } },
-  { path: 'user/home', component: HomeComponent, canActivate: [AuthGuard], data: { role: 'PARENT' } },
+/*   { path: 'superviseur', component: SupervisorProfileComponent, canActivate: [AuthGuard], data: { role: 'SUPERVISEUR' } },
+ */  { path: 'user/home', component: HomeComponent, canActivate: [AuthGuard], data: { role: 'PARENT' } },
   {path: 'list', component: NurseryListComponent},
   {path: 'listmangement', component: ListManagementComponent},
   {path: 'contact', component: ContactFormComponent},
@@ -52,7 +55,8 @@ const routes: Routes = [
   {path: 'header2', component: Header2Component},
   {path: 'contactadmin', component : ContactMessagesComponent},
   {path: 'eurror', component: EurrorPageComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+ 
 ];
 
 @NgModule({
