@@ -12,13 +12,14 @@ import { AvailabilityManagementComponent } from './admin/availability-management
 import { NurseryListComponent } from './user/nursery-list/nursery-list.component';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { ContactFormComponent } from './user/contact-form/contact-form.component';
-import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
+import { EventmangementComponent } from './supervisor/eventmangement/eventmangement.component';
 import { Header2Component } from './Core Components/header2/header2.component';
 import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.component';
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
 import { AboutComponent } from './user/about/about.component';
 import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
+import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,7 @@ const routes: Routes = [
       { path: 'nursery-profile', component: NurseryProfileComponent },
       { path: 'parent-management', component: ParentInquiryComponent },
     /*   { path: 'events', component: EventsComponent }, */
-      { path: 'availability-management', component: AvailabilityManagementComponent },
+      
       
      /*  { path: 'contacts', component: ContactsComponent } */
     
@@ -56,6 +57,8 @@ const routes: Routes = [
   {path: 'contactadmin', component : ContactMessagesComponent},
   {path: 'eurror', component: EurrorPageComponent},
   {path: 'about', component: AboutComponent},
+  { path: 'availability-management', component: AvailabilityManagementComponent },
+  {path : 'eventsupervisor', component: EventmangementComponent}
  
 ];
 

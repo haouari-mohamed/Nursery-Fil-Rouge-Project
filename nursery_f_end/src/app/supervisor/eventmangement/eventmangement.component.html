@@ -1,1 +1,80 @@
-<p>eventmangement works!</p>
+<div class="dashboard">
+    <app-sidebarsup></app-sidebarsup>
+    <main class="main-content">
+        <app-dashboardheadsup></app-dashboardheadsup>
+        <div>
+
+            <div class="event-management">
+                <div class="container">
+                    <h1>Event Management</h1>
+                    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput formControlName="title" required>
+                        <mat-error *ngIf="eventForm.get('title')?.hasError('required')">Title is required</mat-error>
+                      </mat-form-field>
+                  
+                      <mat-form-field appearance="fill">
+                        <mat-label>Date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="date" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="eventForm.get('date')?.hasError('required')">Date is required</mat-error>
+                      </mat-form-field>
+                  
+                      <mat-form-field appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput formControlName="description" required></textarea>
+                        <mat-error *ngIf="eventForm.get('description')?.hasError('required')">Description is required</mat-error>
+                      </mat-form-field>
+                  
+                      <mat-form-field appearance="fill">
+                        <mat-label>Creche ID</mat-label>
+                        <input matInput formControlName="crecheId" required>
+                        <mat-error *ngIf="eventForm.get('crecheId')?.hasError('required')">Creche ID is required</mat-error>
+                      </mat-form-field>
+                  
+                      <button mat-raised-button color="primary" type="submit">Save Event</button>
+                      <button mat-button type="button" (click)="resetForm()">Reset</button>
+                    </form>
+                  
+                    <mat-table [dataSource]="events" class="mat-elevation-z8">
+                      <ng-container matColumnDef="title">
+                        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+                        <mat-cell *matCellDef="let event"> {{event.title}} </mat-cell>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="date">
+                        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                        <mat-cell *matCellDef="let event"> {{event.date | date}} </mat-cell>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                        <mat-cell *matCellDef="let event">
+                          <button mat-icon-button (click)="editEvent(event)">
+                            <mat-icon>edit</mat-icon>
+                          </button>
+                          <button mat-icon-button (click)="deleteEvent(event.id)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </mat-cell>
+                      </ng-container>
+                  
+                      <mat-header-row *matHeaderRowDef="['title', 'date', 'actions']"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: ['title', 'date', 'actions'];"></mat-row>
+                    </mat-table>
+                  </div>
+                  
+               
+
+
+
+
+
+            </div>
+        </div>
+     
+     
+    </main>
+  </div>

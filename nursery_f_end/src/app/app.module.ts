@@ -21,7 +21,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
 import { SupervisorProfileComponent } from './admin/supervisor-profile/supervisor-profile.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
@@ -111,7 +111,8 @@ import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
     MatCardModule,
     MatNativeDateModule, 
     MatDatepickerModule, 
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
