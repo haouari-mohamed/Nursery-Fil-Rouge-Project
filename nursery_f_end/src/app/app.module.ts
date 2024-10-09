@@ -21,11 +21,11 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NurseryProfileComponent } from './admin/nursery-profile/nursery-profile.component';
 import { AvailabilityManagementComponent } from './admin/availability-management/availability-management.component';
 import { SupervisorProfileComponent } from './admin/supervisor-profile/supervisor-profile.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ListManagementComponent } from './admin/list-management/list-management.component';
 import { AuthInterceptor } from './interceptors/interceptors.component';
 import { Header2Component } from './Core Components/header2/header2.component';
-import { SidebarComponent } from './admin/sidebar/sidebar.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
@@ -46,6 +46,15 @@ import { ParentInquiryComponent } from './admin/parent-inquiry/parent-inquiry.co
 import { ContactMessagesComponent } from './admin/contact-messages/contact-messages.component';
 import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/contact-detail-dialog.component';
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
+import { AboutComponent } from './user/about/about.component';
+import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
+
+import { EventmangementComponent } from './supervisor/eventmangement/eventmangement.component';
+import { DashboardheadComponent } from './supervisor/dashboardhead/dashboardhead.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
+import { SupervisorinfoComponent } from './supervisor/supervisorinfo/supervisorinfo.component';
+import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/event-mangement-ad-sup.component';
 
 
 
@@ -73,6 +82,7 @@ import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.c
     ListManagementComponent,
     Header2Component,
     SidebarComponent,
+    SidebarSupComponent,
     DashboardheaderComponent,
     UpdateCrecheDialogComponent,
     EventMangementComponent,
@@ -81,6 +91,12 @@ import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.c
     ContactMessagesComponent,
     ContactDetailDialogComponent,
     EurrorPageComponent,
+    AboutComponent,
+    SupervisorDashboardComponent,
+    EventmangementComponent,
+    DashboardheadComponent,
+    SupervisorinfoComponent,
+    EventMangementAdSupComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +114,8 @@ import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.c
     MatCardModule,
     MatNativeDateModule, 
     MatDatepickerModule, 
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

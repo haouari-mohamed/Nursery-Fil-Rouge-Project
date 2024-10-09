@@ -1,34 +1,36 @@
 :host {
-    display: block;
-    width: 100%;
-    max-width: 1000px;
-  }
-  section{
-    width: 1000px;
-  }
-  
-  mat-dialog-content {
-    padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 24px; 
-    margin-bottom: 20px; 
-  }
-  
-  .form-row mat-form-field {
-    flex: 1;
-    min-width: 48%; 
-  }
-  
-  mat-form-field {
-    width: 100%;
-  }
-  
-  mat-dialog-actions {
-    padding: 16px 0;
-  }
-  
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  width: 490px;
+}
+
+mat-dialog-content {
+  padding-top: 20px;
+  width: 700;
+   
+}
+.row{
+  display: flex;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-actions {
+  padding: 16px 0;
+}
+mdc-dialog__container {
+
+}

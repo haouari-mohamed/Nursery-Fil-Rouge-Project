@@ -31,7 +31,7 @@ public class ParentController {
             @RequestParam Long crecheId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateDebut,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dateFin) {
-        Creche creche = new Creche(); // You might want to fetch this from a service
+        Creche creche = new Creche(); 
         creche.setId(crecheId);
         return ResponseEntity.ok(parentService.reserverPlace(parent, creche, dateDebut, dateFin));
     }
