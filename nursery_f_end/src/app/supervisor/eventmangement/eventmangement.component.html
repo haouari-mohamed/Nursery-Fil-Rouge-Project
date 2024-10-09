@@ -9,9 +9,9 @@
                     <h1>Event Management</h1>
                     <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
                       <mat-form-field appearance="fill">
-                        <mat-label>Title</mat-label>
-                        <input matInput formControlName="title" required>
-                        <mat-error *ngIf="eventForm.get('title')?.hasError('required')">Title is required</mat-error>
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="nom" required> 
+                        <mat-error *ngIf="eventForm.get('nom')?.hasError('required')">Name is required</mat-error>
                       </mat-form-field>
                   
                       <mat-form-field appearance="fill">
@@ -29,9 +29,13 @@
                       </mat-form-field>
                   
                       <mat-form-field appearance="fill">
-                        <mat-label>Creche ID</mat-label>
-                        <input matInput formControlName="crecheId" required>
-                        <mat-error *ngIf="eventForm.get('crecheId')?.hasError('required')">Creche ID is required</mat-error>
+                        <mat-label>Nursery Name</mat-label>
+                        <mat-select formControlName="nurseryName" required>
+                          <mat-option *ngFor="let nursery of nurseries" [value]="nursery.nom">
+                            {{nursery.nom}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="eventForm.get('nurseryName')?.hasError('required')">Nursery name is required</mat-error>
                       </mat-form-field>
                   
                       <button mat-raised-button color="primary" type="submit">Save Event</button>
@@ -39,11 +43,10 @@
                     </form>
                   
                     <mat-table [dataSource]="events" class="mat-elevation-z8">
-                      <ng-container matColumnDef="title">
-                        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-                        <mat-cell *matCellDef="let event"> {{event.title}} </mat-cell>
+                      <ng-container matColumnDef="nom"> 
+                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell> 
+                        <mat-cell *matCellDef="let event"> {{event.nom}} </mat-cell>
                       </ng-container>
-                  
                       <ng-container matColumnDef="date">
                         <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
                         <mat-cell *matCellDef="let event"> {{event.date | date}} </mat-cell>
@@ -61,8 +64,8 @@
                         </mat-cell>
                       </ng-container>
                   
-                      <mat-header-row *matHeaderRowDef="['title', 'date', 'actions']"></mat-header-row>
-                      <mat-row *matRowDef="let row; columns: ['title', 'date', 'actions'];"></mat-row>
+                      <mat-header-row *matHeaderRowDef="['nom', 'date', 'actions']"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: ['nom', 'date', 'actions'];"></mat-row>
                     </mat-table>
                   </div>
                   

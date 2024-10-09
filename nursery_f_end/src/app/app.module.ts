@@ -48,11 +48,13 @@ import { ContactDetailDialogComponent } from './admin/contact-detail-dialog/cont
 import { EurrorPageComponent } from './Core Components/eurror-page/eurror-page.component';
 import { AboutComponent } from './user/about/about.component';
 import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
-import { EventlistComponent } from './supervisor/eventlist/eventlist.component';
+
 import { EventmangementComponent } from './supervisor/eventmangement/eventmangement.component';
 import { DashboardheadComponent } from './supervisor/dashboardhead/dashboardhead.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
+import { SupervisorinfoComponent } from './supervisor/supervisorinfo/supervisorinfo.component';
+import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/event-mangement-ad-sup.component';
 
 
 
@@ -91,9 +93,10 @@ import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
     EurrorPageComponent,
     AboutComponent,
     SupervisorDashboardComponent,
-    EventlistComponent,
     EventmangementComponent,
     DashboardheadComponent,
+    SupervisorinfoComponent,
+    EventMangementAdSupComponent,
   ],
   imports: [
     BrowserModule,

@@ -58,7 +58,9 @@ const routes: Routes = [
   {path: 'eurror', component: EurrorPageComponent},
   {path: 'about', component: AboutComponent},
   { path: 'availability-management', component: AvailabilityManagementComponent },
-  {path : 'eventsupervisor', component: EventmangementComponent}
+  {path : 'eventsupervisor', component: EventmangementComponent},
+  { path: 'supervisor-profile', component: SupervisorProfileComponent },
+
  
 ];
 

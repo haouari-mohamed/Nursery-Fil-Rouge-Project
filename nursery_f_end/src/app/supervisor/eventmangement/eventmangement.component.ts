@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EvenementService } from '../../Shared Components/services/evenement.service'; 
-import { Evenement } from '../../Shared Components/models/global.model'; 
+import { Creche, Evenement } from '../../Shared Components/models/global.model'; 
+import { CrecheService } from 'src/app/Shared Components/services/creche.service';
 
 @Component({
   selector: 'app-eventmangement',
@@ -14,22 +15,25 @@ export class EventmangementComponent implements OnInit {
   events: Evenement[] = [];
   eventForm: FormGroup;
   selectedEventId: number | null = null;
+  nurseries: Creche[] = [];
 
   constructor(
     private evenementService: EvenementService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private nurseryService: CrecheService
   ) {
     this.eventForm = this.fb.group({
-      title: ['', Validators.required],
+      nom: ['', Validators.required],
       date: ['', Validators.required],
       description: ['', Validators.required],
-      crecheId: ['', Validators.required]
+      nurseryName: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
     this.loadEvents();
+    this.loadNurseries();
   }
 
   loadEvents(): void {
@@ -39,6 +43,16 @@ export class EventmangementComponent implements OnInit {
       },
       (error) => {
         this.showSnackBar('Error loading events');
+      }
+    );
+  }
+  loadNurseries(): void {
+    this.nurseryService.getAllCreches().subscribe(
+      (data: Creche[]) => {
+        this.nurseries = data;
+      },
+      () => {
+        this.showSnackBar('Error loading nurseries');
       }
     );
   }
