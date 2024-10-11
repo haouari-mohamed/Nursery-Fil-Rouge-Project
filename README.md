@@ -10,8 +10,7 @@ This platform is developed with **Angular 16** for the frontend and **Spring Boo
 
 ### For Parents (Users)
 - **Secure Registration & Login**: Account creation and secure authentication.
-- **Search for Nurseries**: Search nurseries by location (city, postal code, etc.).
-- **Interactive Map**: View nearby nurseries on a map (Google Maps API integration).
+- **Search for Nurseries**: Search nurseries by  (city, postal code, etc.).
 - **Detailed Nursery Profiles**:
   - Opening hours
   - Capacity
