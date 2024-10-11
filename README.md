@@ -31,9 +31,7 @@ This platform is developed with **Angular 16** for the frontend and **Spring Boo
 ### Backend (Spring Boot)
 - **API**: RESTful API for data exchange between frontend and backend.
 - **Authentication & Authorization**: Implemented with Spring Security.
-- **Database**: Integrated with a relational database (MySQL using XAMPP).
-- **Geo-Location Service**: For nursery searches based on location.
-- **Email Notifications**: Sends notifications to users and administrators.
+- **Database**: Integrated with a relational database (MySQL using XAMPP)
 
 ### Frontend (Angular 16)
 - **Responsive UI**: User-friendly and responsive interface.
