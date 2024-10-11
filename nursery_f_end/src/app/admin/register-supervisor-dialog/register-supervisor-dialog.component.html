@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Register Supervisor</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput [(ngModel)]="newSuperviseur.nom" name="nom">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="newSuperviseur.prenom" name="prenom">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="newSuperviseur.email" name="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="newSuperviseur.password" name="password" type="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Creche ID</mat-label>
+      <input matInput [(ngModel)]="newSuperviseur.crecheId" name="crecheId">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button color="primary" (click)="register()">Register</button>
+</div>

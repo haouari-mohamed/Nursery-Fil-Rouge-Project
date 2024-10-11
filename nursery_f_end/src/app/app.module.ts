@@ -55,6 +55,7 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
 import { SupervisorinfoComponent } from './supervisor/supervisorinfo/supervisorinfo.component';
 import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/event-mangement-ad-sup.component';
+import { RegisterSupervisorDialogComponent } from './admin/register-supervisor-dialog/register-supervisor-dialog.component';
 
 
 
@@ -97,6 +98,7 @@ import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/eve
     DashboardheadComponent,
     SupervisorinfoComponent,
     EventMangementAdSupComponent,
+    RegisterSupervisorDialogComponent,
   ],
   imports: [
     BrowserModule,

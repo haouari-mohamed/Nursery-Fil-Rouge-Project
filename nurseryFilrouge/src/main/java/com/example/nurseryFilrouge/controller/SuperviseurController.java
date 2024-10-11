@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/superviseurs")
@@ -18,6 +20,16 @@ public class SuperviseurController {
     public ResponseEntity<Superviseur> registerSuperviseur(@RequestBody Superviseur superviseur) {
         return ResponseEntity.ok(superviseurService.registerSuperviseur(superviseur));
     }
+    @GetMapping("/all")
+    public List<Superviseur> getAllSuperviseurs() {
+        return superviseurService.getAllSuperviseur();
+    }
+
+
+    @GetMapping ("/hello")
+        public String hello() {
+        return "hello world ";
+        }
 
     @PutMapping("/creches/{crecheId}")
     public ResponseEntity<Void> gererInformations(@PathVariable Long crecheId, @RequestBody Creche updatedCreche) {
