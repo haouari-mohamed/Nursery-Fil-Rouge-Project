@@ -8,12 +8,19 @@ import com.example.nurseryFilrouge.repository.SuperviseurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SuperviseurService {
     @Autowired
     private SuperviseurRepository superviseurRepository;
     @Autowired
     private CrecheRepository crecheRepository;
+
+    public List<Superviseur> getAllSuperviseur() {
+        return superviseurRepository.findAll();
+    }
+
 
     public Superviseur registerSuperviseur(Superviseur superviseur) {
         return superviseurRepository.save(superviseur);

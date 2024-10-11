@@ -13,6 +13,10 @@ export class SuperviseurService {
   registerSuperviseur(superviseur: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, superviseur);
   }
+/* 
+  getSuperviseurs(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/all`);
+  } */
 
   gererInformations(crecheId: number, updatedCreche: any): Observable<void> {
     return this.http.put<void>(`${this.apiUrl}/creches/${crecheId}`, updatedCreche);
