@@ -9,15 +9,14 @@ pipeline {
             }
         }
 
-        stage('Build with Maven') {
-            steps {
+     stage('Build with Maven') {
+         steps {
+             script {
 
-                script {
-                    // Run Maven build
-                    sh 'mvn clean package'
-                }
-            }
-        }
+                 bat 'mvn clean package'
+             }
+         }
+     }
 
         stage('Build Docker Image') {
             steps {

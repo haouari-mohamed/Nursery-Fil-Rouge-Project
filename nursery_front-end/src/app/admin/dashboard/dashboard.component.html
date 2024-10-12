@@ -1,8 +1,7 @@
-
 <div class="dashboard">
   <app-sidebar></app-sidebar>
   <main class="main-content">
-  <app-dashboardheader></app-dashboardheader>
+    <app-dashboardheader></app-dashboardheader>
     <section class="welcome-banner">
       <div class="welcome-text">
         <p>{{ currentDate | date:'MMMM d, yyyy' }}</p>
@@ -16,33 +15,32 @@
       </div>
     </section>
     <div class="content-wrapper">
-      
       <section class="nursery-list">
-        <div class="Nures">
         <h1 class="notice-title">Nursery List</h1>
-        <div class="search-bar">
-          <input type="text" placeholder="Search" class="search-input">
-          <i class="fas fa-search search-icon"></i>
-        </div>
-        </div>
-        <div class="list-container">
-          
-          <app-nursery-list></app-nursery-list>
-        </div>
+        <app-nursery-list></app-nursery-list>
       </section>
       <section class="daily-notice">
         <div class="notice-header">
           <h3 class="notice-title">Event</h3>
           <a href="#" class="see-all">See all</a>
         </div>
-        <div *ngFor="let event of events " class="notice-card">
-        
-          <p>{{ event.description }}</p>
-          <p><strong>Date: </strong>{{ event.date | date:'longDate' }}</p>
-          <p><strong>Event: </strong>{{ event.nom }}</p>
-          <a href="/eventmanagement">See more</a>
+        <div *ngIf="paginatedEvents.length > 0">
+          <div *ngFor="let event of paginatedEvents" class="notice-card">
+            <p>{{ event.description }}</p>
+            <p><strong>Date: </strong>{{ event.date | date:'longDate' }}</p>
+            <p><strong>Event: </strong>{{ event.nom }}</p>
+            <a href="/eventmanagement">See more</a>
+          </div>
+          <mat-paginator 
+            [length]="events.length" 
+            [pageSize]="pageSize" 
+            [pageSizeOptions]="[3, 5, 10]" 
+            (page)="onPageChange($event)">
+          </mat-paginator>
         </div>
+        <p *ngIf="paginatedEvents.length === 0" class="text-center mt-3 text-muted">No events available</p>
       </section>
+      
     </div>
   </main>
 </div>
