@@ -1,83 +1,84 @@
 <div class="dashboard">
-    <app-sidebarsup></app-sidebarsup>
-    <main class="main-content">
-        <app-dashboardheadsup></app-dashboardheadsup>
-        <div>
+  <app-sidebarsup></app-sidebarsup>
+  <main class="main-content">
+    <app-dashboardheadsup></app-dashboardheadsup>
+    <div class="event-management">
+      <div class="container">
+        <h1>Event Management</h1>
+        <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="event-form mat-elevation-z4">
+          <div class="form-grid">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="nom" required>
+              <mat-error *ngIf="eventForm.get('nom')?.hasError('required')">Name is required</mat-error>
+            </mat-form-field>
 
-            <div class="event-management">
-                <div class="container">
-                    <h1>Event Management</h1>
-                    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-                      <mat-form-field appearance="fill">
-                        <mat-label>Name</mat-label>
-                        <input matInput formControlName="nom" required> 
-                        <mat-error *ngIf="eventForm.get('nom')?.hasError('required')">Name is required</mat-error>
-                      </mat-form-field>
-                  
-                      <mat-form-field appearance="fill">
-                        <mat-label>Date</mat-label>
-                        <input matInput [matDatepicker]="picker" formControlName="date" required>
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                        <mat-error *ngIf="eventForm.get('date')?.hasError('required')">Date is required</mat-error>
-                      </mat-form-field>
-                  
-                      <mat-form-field appearance="fill">
-                        <mat-label>Description</mat-label>
-                        <textarea matInput formControlName="description" required></textarea>
-                        <mat-error *ngIf="eventForm.get('description')?.hasError('required')">Description is required</mat-error>
-                      </mat-form-field>
-                  
-                      <mat-form-field appearance="fill">
-                        <mat-label>Nursery Name</mat-label>
-                        <mat-select formControlName="nurseryName" required>
-                          <mat-option *ngFor="let nursery of nurseries" [value]="nursery.nom">
-                            {{nursery.nom}}
-                          </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="eventForm.get('nurseryName')?.hasError('required')">Nursery name is required</mat-error>
-                      </mat-form-field>
-                  
-                      <button mat-raised-button color="primary" type="submit">Save Event</button>
-                      <button mat-button type="button" (click)="resetForm()">Reset</button>
-                    </form>
-                  
-                    <mat-table [dataSource]="events" class="mat-elevation-z8">
-                      <ng-container matColumnDef="nom"> 
-                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell> 
-                        <mat-cell *matCellDef="let event"> {{event.nom}} </mat-cell>
-                      </ng-container>
-                      <ng-container matColumnDef="date">
-                        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-                        <mat-cell *matCellDef="let event"> {{event.date | date}} </mat-cell>
-                      </ng-container>
-                  
-                      <ng-container matColumnDef="actions">
-                        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-                        <mat-cell *matCellDef="let event">
-                          <button mat-icon-button (click)="editEvent(event)">
-                            <mat-icon>edit</mat-icon>
-                          </button>
-                          <button mat-icon-button (click)="deleteEvent(event.id)">
-                            <mat-icon>delete</mat-icon>
-                          </button>
-                        </mat-cell>
-                      </ng-container>
-                  
-                      <mat-header-row *matHeaderRowDef="['nom', 'date', 'actions']"></mat-header-row>
-                      <mat-row *matRowDef="let row; columns: ['nom', 'date', 'actions'];"></mat-row>
-                    </mat-table>
-                  </div>
-                  
-               
+            <mat-form-field appearance="fill">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="eventForm.get('date')?.hasError('required')">Date is required</mat-error>
+            </mat-form-field>
 
+            <mat-form-field appearance="fill">
+              <mat-label>Nursery Name</mat-label>
+              <mat-select formControlName="nurseryName" required>
+                <mat-option *ngFor="let nursery of nurseries" [value]="nursery.id">
+                  {{ nursery.nom }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="eventForm.get('nurseryName')?.hasError('required')">Nursery name is required</mat-error>
+            </mat-form-field>
 
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description" required rows="4"></textarea>
+              <mat-error *ngIf="eventForm.get('description')?.hasError('required')">Description is required</mat-error>
+            </mat-form-field>
+          </div>
 
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit">Save Event</button>
+            <button mat-button type="button" (click)="resetForm()">Reset</button>
+          </div>
+        </form>
 
+        <div class="mat-elevation-z8 table-container">
+          <table mat-table [dataSource]="events">
+            <ng-container matColumnDef="nom">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let event"> {{ event.nom }} </td>
+            </ng-container>
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Date </th>
+              <td mat-cell *matCellDef="let event"> {{ event.date | date }} </td>
+            </ng-container>
+            <ng-container matColumnDef="nurseryName">
+              <th mat-header-cell *matHeaderCellDef> Nursery Name </th>
+              <td mat-cell *matCellDef="let event"> {{ event.creche.nom }} </td>
+            </ng-container>
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let event"> {{ event.description }} </td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let event">
+                <button mat-icon-button (click)="editEvent(event)" color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteEvent(event.id)" color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
 
-            </div>
+            <tr mat-header-row *matHeaderRowDef="['nom', 'date', 'nurseryName', 'description', 'actions']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['nom', 'date', 'nurseryName', 'description', 'actions'];"></tr>
+          </table>
         </div>
-     
-     
-    </main>
-  </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -53,11 +53,14 @@ export interface User {
   }
   //evenement
   export interface Evenement {
+    /* location: any; */
     id: number;
     nom: string;
     description: string;
     date: Date;
     creche: Creche;
+    nurseryName: string;
+   
    
   }
   

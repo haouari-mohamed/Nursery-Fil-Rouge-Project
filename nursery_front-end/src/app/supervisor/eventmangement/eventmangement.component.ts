@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EvenementService } from '../../Shared Components/services/evenement.service'; 
 import { Creche, Evenement } from '../../Shared Components/models/global.model'; 
@@ -27,7 +26,7 @@ export class EventmangementComponent implements OnInit {
       nom: ['', Validators.required],
       date: ['', Validators.required],
       description: ['', Validators.required],
-      nurseryName: ['', Validators.required]
+      nurseryName: ['', Validators.required], 
     });
   }
 
@@ -39,13 +38,17 @@ export class EventmangementComponent implements OnInit {
   loadEvents(): void {
     this.evenementService.getAllEvenements().subscribe(
       (data: Evenement[]) => {
-        this.events = data;
+        this.events = data.map(event => ({
+          ...event,
+          creche: event.creche || { nom: 'Unknown' } 
+        }));
       },
       (error) => {
         this.showSnackBar('Error loading events');
       }
     );
   }
+
   loadNurseries(): void {
     this.nurseryService.getAllCreches().subscribe(
       (data: Creche[]) => {
@@ -62,6 +65,7 @@ export class EventmangementComponent implements OnInit {
       const event = this.eventForm.value;
 
       if (this.selectedEventId) {
+        // Update existing event
         this.evenementService.updateEvenement(this.selectedEventId, event).subscribe(
           () => {
             this.loadEvents();
@@ -73,6 +77,7 @@ export class EventmangementComponent implements OnInit {
           }
         );
       } else {
+        // Create new event
         this.evenementService.createEvenement(event).subscribe(
           () => {
             this.loadEvents();

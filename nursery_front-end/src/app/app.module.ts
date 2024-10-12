@@ -56,6 +56,7 @@ import { SidebarSupComponent } from './supervisor/sidebar/sidebar.component';
 import { SupervisorinfoComponent } from './supervisor/supervisorinfo/supervisorinfo.component';
 import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/event-mangement-ad-sup.component';
 import { RegisterSupervisorDialogComponent } from './admin/register-supervisor-dialog/register-supervisor-dialog.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -117,7 +118,8 @@ import { RegisterSupervisorDialogComponent } from './admin/register-supervisor-d
     MatNativeDateModule, 
     MatDatepickerModule, 
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

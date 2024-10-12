@@ -1,31 +1,41 @@
-<mat-table [dataSource]="creches">
-    
+<div class="nursery-list">
+  <div class="search-bar">
+    <input type="text" placeholder="Search by name" class="search-input" [(ngModel)]="nurserySearchTerm" (input)="applyNurseryFilter()">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+  <mat-table [dataSource]="paginatedNurseries" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
-  
+
     <ng-container matColumnDef="nom">
       <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.nom}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="codePostal">
-        <mat-header-cell *matHeaderCellDef> Postal Code </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.codePostal}} </mat-cell>
-      </ng-container>
+      <mat-header-cell *matHeaderCellDef> Postal Code </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.codePostal}} </mat-cell>
+    </ng-container>
 
-      <ng-container matColumnDef="ville">
-        <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.ville}} </mat-cell>
-      </ng-container>
-      
-      <ng-container matColumnDef="capacite">
-        <mat-header-cell *matHeaderCellDef> Capacite </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.capacite}} </mat-cell>
-      </ng-container>
-  
+    <ng-container matColumnDef="ville">
+      <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ville}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="capacite">
+      <mat-header-cell *matHeaderCellDef> Capacity </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capacite}} </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-  
+  <mat-paginator 
+    [length]="filteredNurseries.length" 
+    [pageSize]="nurseryPageSize" 
+    [pageSizeOptions]="[5, 10, 20]" 
+    (page)="onNurseryPageChange($event)">
+  </mat-paginator>
+</div>
