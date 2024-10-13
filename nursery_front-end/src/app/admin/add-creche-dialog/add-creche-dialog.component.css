@@ -1,17 +1,11 @@
 :host {
   display: block;
   width: 100%;
-  max-width: 200px;
-  width: 490px;
+  max-width: 500px; /* Adjust based on your design */
 }
 
 mat-dialog-content {
-  padding-top: 20px;
-  width: 700;
-   
-}
-.row{
-  display: flex;
+  padding: 20px;
 }
 
 .form-row {
@@ -20,7 +14,7 @@ mat-dialog-content {
   margin-bottom: 16px;
 }
 
-.form-row mat-form-field {
+.full-width {
   flex: 1;
 }
 
@@ -31,6 +25,17 @@ mat-form-field {
 mat-dialog-actions {
   padding: 16px 0;
 }
-mdc-dialog__container {
 
+button {
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+button:hover {
+  background-color: rgba(63, 81, 181, 0.1); 
+  transform: scale(1.02); 
+}
+
+mat-error {
+  font-size: 0.8em;
+  color: red;
 }

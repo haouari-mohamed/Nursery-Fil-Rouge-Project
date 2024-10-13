@@ -50,8 +50,15 @@
     </div>
     <div class="form-row">
       <mat-form-field appearance="outline">
-        <mat-label>Rates</mat-label>
+        <mat-label>Prix</mat-label>
         <input matInput formControlName="tarifs">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="imageUrl" required>
+        <mat-error *ngIf="crecheForm.get('imageUrl')?.hasError('pattern')">image link .</mat-error>
       </mat-form-field>
     </div>
   </form>

@@ -1,73 +1,61 @@
-<h2 mat-dialog-title>Add new Crèche</h2>
-
+<h2 mat-dialog-title>Add Creche</h2>
 <mat-dialog-content>
   <form [formGroup]="crecheForm" (ngSubmit)="onSubmit()">
-   
-    <section class="row">
-      <div class="form-row">
-        <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="nom" required>
-          <mat-error *ngIf="crecheForm.get('nom')?.hasError('required')">Name is required</mat-error>
-        </mat-form-field>
-      </div>
- 
-      <div class="form-row">
-        <mat-form-field appearance="outline">
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="adresse" required>
-          <mat-error *ngIf="crecheForm.get('adresse')?.hasError('required')">Address is required</mat-error>
-        </mat-form-field>
-      </div>
-    </section>
-    
     <div class="form-row">
-      <mat-form-field appearance="outline">
-        <mat-label>Postal Code</mat-label>
-        <input matInput formControlName="codePostal" required>
-        <mat-error *ngIf="crecheForm.get('codePostal')?.hasError('required')">Postal code is required</mat-error>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="nom" required>
+        <mat-error *ngIf="crecheForm.get('nom')?.hasError('required')">Name is required</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline">
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>City</mat-label>
         <input matInput formControlName="ville" required>
         <mat-error *ngIf="crecheForm.get('ville')?.hasError('required')">City is required</mat-error>
       </mat-form-field>
-    </div>
-    <section class="row">
-      <div class="form-row">
-        <mat-form-field appearance="outline">
-          <mat-label>Capacity</mat-label>
-          <input matInput type="number" formControlName="capacite" required>
-          <mat-error *ngIf="crecheForm.get('capacite')?.hasError('required')">Capacity is required</mat-error>
-          <mat-error *ngIf="crecheForm.get('capacite')?.hasError('min')">Capacity must be greater than 0</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="form-row">
-        <mat-form-field appearance="outline">
-          <mat-label>Opening Hours</mat-label>
-          <input matInput formControlName="horairesOuverture" required>
-          <mat-error *ngIf="crecheForm.get('horairesOuverture')?.hasError('required')">Opening hours are required</mat-error>
-        </mat-form-field>
-      </div>
-    </section>
-    
-    <div class="form-row">
-      <mat-form-field appearance="outline">
-        <mat-label>Tarifs</mat-label>
-        <input matInput formControlName="tarifs" type="number" required>
-        <mat-error *ngIf="crecheForm.get('tarifs')?.hasError('pattern')">Tarifs must be numeric.</mat-error>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="adresse" required>
+        <mat-error *ngIf="crecheForm.get('adresse')?.hasError('required')">Address is required</mat-error>
       </mat-form-field>
     </div>
     <div class="form-row">
-      <mat-form-field appearance="outline">
-        <mat-label>Image</mat-label>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Postal Code</mat-label>
+        <input matInput formControlName="codePostal" required>
+        <mat-error *ngIf="crecheForm.get('codePostal')?.hasError('required')">Postal code is required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Capacity</mat-label>
+        <input matInput type="number" formControlName="capacite" required>
+        <mat-error *ngIf="crecheForm.get('capacite')?.hasError('required')">Capacity is required</mat-error>
+        <mat-error *ngIf="crecheForm.get('capacite')?.hasError('min')">Capacity must be greater than 0</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Image URL</mat-label>
         <input matInput formControlName="imageUrl" required>
-        <mat-error *ngIf="crecheForm.get('imageUrl')?.hasError('pattern')">image link .</mat-error>
+        <mat-error *ngIf="crecheForm.get('imageUrl')?.hasError('required')">Image URL is required</mat-error>
       </mat-form-field>
+     
     </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="tarifs">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Opening Hours</mat-label>
+        <input matInput formControlName="horairesOuverture" required>
+        <mat-error *ngIf="crecheForm.get('horairesOuverture')?.hasError('required')">Opening hours are required</mat-error>
+      </mat-form-field>
+     
+    </div>
+    <mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" [disabled]="!crecheForm.valid" (click)="onSubmit()">Add</button>
+    </mat-dialog-actions>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button color="primary" [disabled]="!crecheForm.valid" (click)="onSubmit()">Add</button>
-</mat-dialog-actions>

@@ -5,6 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-add-creche-dialog',
   templateUrl: './add-creche-dialog.component.html',
+  styleUrls: ['./add-creche-dialog.component.css']
 })
 export class AddCrecheDialogComponent {
   crecheForm: FormGroup;
@@ -20,8 +21,8 @@ export class AddCrecheDialogComponent {
       codePostal: ['', Validators.required],
       capacite: ['', [Validators.required, Validators.min(1)]],
       horairesOuverture: ['', Validators.required],
-      tarifs: ['', Validators.pattern("^[0-9]*$")],
-      imageUrl:['', Validators.required]
+      tarifs: ['', [Validators.pattern("^[0-9]*$")]],
+      imageUrl: ['', Validators.required]
     });
   }
 
