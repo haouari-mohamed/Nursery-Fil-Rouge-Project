@@ -57,6 +57,7 @@ import { SupervisorinfoComponent } from './supervisor/supervisorinfo/supervisori
 import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/event-mangement-ad-sup.component';
 import { RegisterSupervisorDialogComponent } from './admin/register-supervisor-dialog/register-supervisor-dialog.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NurseryCardComponent } from './user/nursery-card/nursery-card.component';
 
 
 
@@ -100,6 +101,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SupervisorinfoComponent,
     EventMangementAdSupComponent,
     RegisterSupervisorDialogComponent,
+    NurseryCardComponent,
   ],
   imports: [
     BrowserModule,

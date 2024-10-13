@@ -1,0 +1,33 @@
+<app-header2></app-header2>
+
+<section class="nursery-section">
+  <header class="category-header">
+    <div class="category-indicator">
+      <div class="indicator-bar"></div>
+    </div>
+    <h2 class="category-title">Our Nursery</h2>
+  </header>
+  <div class="product-grid">
+    <div class="product-row" *ngFor="let creche of creches">
+      <article class="product-card">
+        <img loading="lazy" [src]="" src="https://media.istockphoto.com/id/505936825/photo/student-with-messy-hands-in-classroom.jpg?s=1024x1024&w=is&k=20&c=OAcTrG96d3hpYM4_r6Jnid11JG03KH4x3KZIJls-ngM="  class="product-image" alt="{{ creche.nom }}" />
+        <div class="product-details">
+          <div class="product-info">
+            <h3 class="product-name">{{ creche.nom }}</h3>
+            <div class="price-container">
+              <span class="discounted-price">${{ creche.tarifs }}</span>
+           <!--    <span class="original-price">${{ creche.tarifs  }}</span> -->
+            </div>
+            <div class="rating-container">
+              <!-- <span class="rating-stars">{{ creche.rating }}</span> -->
+             <!--  <span class="rating-count">({{ creche.ratingCount }})</span> -->
+            </div>
+          </div>
+          <button class="add-to-cart" aria-label="Add to cart">Add to cart</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

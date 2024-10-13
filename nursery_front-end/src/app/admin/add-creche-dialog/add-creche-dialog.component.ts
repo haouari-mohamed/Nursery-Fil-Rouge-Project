@@ -20,7 +20,7 @@ export class AddCrecheDialogComponent {
       codePostal: ['', Validators.required],
       capacite: ['', [Validators.required, Validators.min(1)]],
       horairesOuverture: ['', Validators.required],
-      tarifs: ['']
+      tarifs: ['', Validators.pattern("^[0-9]*$")]
     });
   }
 
