@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header2.component.css']
 })
 export class Header2Component {
+  cartVisible: boolean = false;
 
+  toggleCart(event: Event): void {
+    event.preventDefault(); 
+    this.cartVisible = !this.cartVisible;
+  }
 }

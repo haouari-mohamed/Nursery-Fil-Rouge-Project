@@ -1,0 +1,78 @@
+.cart-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cart-sidebar.hidden {
+    transform: translateX(100%);
+  }
+  
+  .cart-sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  
+  .cart-sidebar.hidden {
+    transform: translateX(100%);
+  }
+  
+  .cart-sidebar h3 {
+    margin-top: 0;
+  }
+  
+  .cart-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-sidebar li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .cart-sidebar button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cart-sidebar button:hover {
+    background-color: #ff4a35;
+  }
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .close-btn:hover {
+    background-color: darkred;
+  }
+  
