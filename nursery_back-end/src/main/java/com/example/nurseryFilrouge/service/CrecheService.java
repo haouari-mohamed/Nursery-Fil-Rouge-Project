@@ -37,6 +37,7 @@ public class CrecheService {
             creche.setHorairesOuverture(updatedCreche.getHorairesOuverture());
             creche.setServices(updatedCreche.getServices());
             creche.setTarifs(updatedCreche.getTarifs());
+            creche.setImageUrl(updatedCreche.getImageUrl());
             crecheRepository.save(creche);
         }
 
