@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         const userType = response.roles[0] as UserType;
         switch(userType) {
           case UserType.PARENT:
-            this.router.navigate(['/home']);
+            this.router.navigate(['/nruseryitem']);
             break;
           case UserType.SUPERVISEUR:
             this.router.navigate(['/superviseur']);

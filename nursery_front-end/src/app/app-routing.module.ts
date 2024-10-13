@@ -21,6 +21,7 @@ import { AboutComponent } from './user/about/about.component';
 import { SupervisorDashboardComponent } from './supervisor/supervisor-dashboard/supervisor-dashboard.component';
 import { EventMangementComponent } from './admin/event-mangement/event-mangement.component';
 import { NurseryCardComponent } from './user/nursery-card/nursery-card.component';
+import { CartVisibleComponent } from './user/cart-visible/cart-visible.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'nruseryitem', component: NurseryCardComponent },
+  { path: 'cart', component: CartVisibleComponent },
 
   {path : 'superviseur', component : SupervisorDashboardComponent},
   { 

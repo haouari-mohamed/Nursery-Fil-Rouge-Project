@@ -58,6 +58,7 @@ import { EventMangementAdSupComponent } from './admin/event-mangement-ad-sup/eve
 import { RegisterSupervisorDialogComponent } from './admin/register-supervisor-dialog/register-supervisor-dialog.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NurseryCardComponent } from './user/nursery-card/nursery-card.component';
+import { CartVisibleComponent } from './user/cart-visible/cart-visible.component';
 
 
 
@@ -102,6 +103,7 @@ import { NurseryCardComponent } from './user/nursery-card/nursery-card.component
     EventMangementAdSupComponent,
     RegisterSupervisorDialogComponent,
     NurseryCardComponent,
+    CartVisibleComponent,
   ],
   imports: [
     BrowserModule,

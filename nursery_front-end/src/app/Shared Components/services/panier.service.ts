@@ -25,6 +25,7 @@ export class PanierService {
   getCrechesInPanier(panierId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/${panierId}/creches`);
   }
+  
 
   clearPanier(panierId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${panierId}`);

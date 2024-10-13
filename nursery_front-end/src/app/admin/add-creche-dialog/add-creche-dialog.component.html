@@ -55,7 +55,14 @@
       <mat-form-field appearance="outline">
         <mat-label>Tarifs</mat-label>
         <input matInput formControlName="tarifs" type="number" required>
-        <mat-error *ngIf="crecheForm.get('tarifs')?.hasError('pattern')">Rates must be numeric.</mat-error>
+        <mat-error *ngIf="crecheForm.get('tarifs')?.hasError('pattern')">Tarifs must be numeric.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="imageUrl" required>
+        <mat-error *ngIf="crecheForm.get('imageUrl')?.hasError('pattern')">image link .</mat-error>
       </mat-form-field>
     </div>
   </form>

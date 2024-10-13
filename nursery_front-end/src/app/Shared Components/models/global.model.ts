@@ -47,7 +47,7 @@ export interface User {
   
   // panier
   export interface Panier {
-    id: number;
+    panierId: number;
     parent: Parent;
     creches: Creche[];
   }
@@ -64,11 +64,12 @@ export interface User {
    
   }
   
-  // creche
+  // nursery
   export interface Creche {
     id: number;
     nom: string;
     adresse: string;
+    imageUrl: string;
     codePostal: string;
     ville: string;
     capacite: number;
