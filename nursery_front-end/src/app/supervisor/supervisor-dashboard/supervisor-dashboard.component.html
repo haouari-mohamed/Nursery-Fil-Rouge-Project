@@ -21,14 +21,14 @@
           <div class="search-bar">
             <mat-form-field appearance="fill">
               <mat-label>Search</mat-label>
-              <input matInput placeholder="Search" class="search-input">
+              <input matInput placeholder="Search" [(ngModel)]="searchTerm" (input)="applyFilter()" class="search-input">
               <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
           </div>
         </div>
         <div class="list-container">
           <div class="table-responsive w-100">
-            <table mat-table [dataSource]="events" class="mat-elevation-z8">
+            <table mat-table [dataSource]="filteredEvents" class="mat-elevation-z8">
               <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> Event ID </th>
                 <td mat-cell *matCellDef="let event"> {{ event.id }} </td>
@@ -57,7 +57,7 @@
               <tr mat-header-row *matHeaderRowDef="['id', 'nom', 'date', 'nursery', 'description']"></tr>
               <tr mat-row *matRowDef="let row; columns: ['id', 'nom', 'date', 'nursery', 'description']"></tr>
             </table>
-            <p *ngIf="events.length === 0" class="text-center mt-3 text-muted">No events available</p>
+            <p *ngIf="filteredEvents.length === 0" class="text-center mt-3 text-muted">No events available</p>
           </div>
         </div>
       </section>

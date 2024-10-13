@@ -21,7 +21,7 @@
   .header-content {
     display: flex;
     align-items: center;
-    gap: 280px;
+    gap: 160px;
   }
 
   .logo {

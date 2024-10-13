@@ -20,6 +20,7 @@ public class Creche {
     private String ville;
     private int capacite;
     private String horairesOuverture;
+    private String imageUrl;
 
     @ElementCollection
     private List<String> services;

@@ -11,6 +11,8 @@ export class SupervisorDashboardComponent implements OnInit {
   currentDate: Date = new Date();
   supervisorName: string = 'Supervisor'; 
   events: Evenement[] = [];
+  filteredEvents: Evenement[] = []; 
+  searchTerm: string = ''; 
 
   constructor(private evenementService: EvenementService) { }
 
@@ -22,10 +24,18 @@ export class SupervisorDashboardComponent implements OnInit {
     this.evenementService.getAllEvenements().subscribe(
       (data: Evenement[]) => {
         this.events = data; 
+        this.filteredEvents = data; 
       },
       (error) => {
         console.error('Error fetching events', error);
       }
+    );
+  }
+
+  applyFilter(): void {
+    const filterValue = this.searchTerm.trim().toLowerCase();
+    this.filteredEvents = this.events.filter(event => 
+      event.nom.toLowerCase().includes(filterValue)
     );
   }
 }
