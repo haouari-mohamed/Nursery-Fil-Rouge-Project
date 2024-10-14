@@ -24,7 +24,8 @@ export class UpdateCrecheDialogComponent implements OnInit {
       ville: ['', Validators.required],
       capacite: ['', [Validators.required, Validators.min(1)]],
       horairesOuverture: ['', Validators.required],
-      tarifs: ['']
+      tarifs: ['', Validators.pattern("^[0-9]*$")],
+      imageUrl:['', Validators.required]
     });
   }
 
