@@ -21,25 +21,12 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - nursery-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    ports:
-      - "9090:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-    networks:
-      - nursery-network
+
+
 
 volumes:
   mysql-data:
-  jenkins_home:
 
 networks:
   nursery-network:

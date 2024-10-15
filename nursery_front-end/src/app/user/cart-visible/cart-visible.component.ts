@@ -33,16 +33,15 @@ export class CartVisibleComponent implements OnInit {
     }
   }
 
-  // Remove a crèche from the cart
   removeCrecheFromCart(creche: any): void {
     if (this.panierId !== null) {
-      this.panierService.removeCrecheFromCart(this.panierId, creche).subscribe(() => {
-        this.crechesInCart = this.crechesInCart.filter(item => item !== creche);
-      }, (error) => {
-        console.error('Error removing crèche from cart', error);
-      });
+        this.panierService.removeCrecheFromCart(this.panierId, creche).subscribe(() => {
+            this.crechesInCart = this.crechesInCart.filter(item => item !== creche);
+        }, (error) => {
+            console.error('Error removing crèche from cart', error);
+        });
     }
-  }
+}
 
   // Handle checkout logic
   checkout(): void {

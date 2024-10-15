@@ -36,6 +36,7 @@ public class PanierService {
         });
     }
 
+
     public List<Creche> getCrechesInPanier(Long panierId) {
         return panierRepository.findById(panierId)
                 .map(Panier::getCreches)

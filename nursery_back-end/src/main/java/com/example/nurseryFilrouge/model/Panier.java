@@ -3,6 +3,7 @@ package com.example.nurseryFilrouge.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -19,7 +20,11 @@ public class Panier {
     @OneToOne
     private Parent parent;
 
-    @ManyToMany
-    private List<Creche> creches;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Creche> creches = new ArrayList<>();
+
+
+
 
 }
