@@ -176,10 +176,7 @@
       white-space: nowrap;
       border: 0;
     }
-   /*  p{
-        width: 200px;
-    } */
-
+  
     @media (max-width: 991px) {
       .footer-content {
         max-width: 100%;
