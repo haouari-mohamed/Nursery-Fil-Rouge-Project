@@ -18,16 +18,16 @@ export class PanierService {
     return this.http.post<void>(`${this.apiUrl}/${panierId}/creches`, creche);
   }
 
-  removeCrecheFromCart(panierId: number, creche: any): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${panierId}/creches`, { body: creche });
-  }
+ 
 
-  getCrechesInPanier(panierId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${panierId}/creches`);
+  getCrechesInPanier(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/creches`);
   }
   
-
-  clearPanier(panierId: number): Observable<void> {
+  removeCrecheFromCart(panierId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${panierId}`);
   }
+/*   clearPanier(panierId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${panierId}`);
+  } */
 }

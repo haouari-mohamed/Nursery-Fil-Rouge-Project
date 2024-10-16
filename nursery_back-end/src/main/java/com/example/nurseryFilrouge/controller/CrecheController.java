@@ -21,9 +21,14 @@ public class CrecheController {
         Creche newCreche = crecheService.addCreche(creche);
         return ResponseEntity.ok(newCreche);
     }
-
     @GetMapping("/search")
-    public ResponseEntity<List<Creche>> searchCreches(@RequestParam String ville) {
+    public ResponseEntity<List<Creche>> searchCreches(@RequestParam String nom) {
+        List<Creche> creches = crecheService.searchCrechesByNom(nom);
+        return ResponseEntity.ok(creches);
+    }
+
+    @GetMapping("/searchcity")
+    public ResponseEntity<List<Creche>> searchCrechesCity(@RequestParam String ville) {
         return ResponseEntity.ok(crecheService.searchCreches(ville));
     }
 

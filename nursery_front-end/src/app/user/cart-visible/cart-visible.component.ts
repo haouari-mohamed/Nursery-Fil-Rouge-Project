@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PanierService } from 'src/app/Shared Components/services/panier.service';
+import { catchError, finalize } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { Creche } from 'src/app/Shared Components/models/global.model';
+
 
 @Component({
   selector: 'app-cart-visible',
@@ -8,48 +12,73 @@ import { PanierService } from 'src/app/Shared Components/services/panier.service
 })
 export class CartVisibleComponent implements OnInit {
   @Input() panierId: number | null = null;
-  crechesInCart: any[] = [];
-  isCartVisible: boolean = true;  
+  crechesInCart: Creche[] = [];
+  isCartVisible: boolean = true;
+  isLoading: boolean = false;
+  error: string | null = null;
 
   constructor(private panierService: PanierService) {}
 
-  // Fetch crèches when the component initializes
   ngOnInit(): void {
-    if (this.panierId !== null) {
-      this.loadCrechesInCart();
-    }
+    this.loadCrechesInCart();
   }
-  
+
   loadCrechesInCart(): void {
-    if (this.panierId !== null) {
-      this.panierService.getCrechesInPanier(this.panierId).subscribe(
-        (creches: any[]) => {
-          this.crechesInCart = creches;
-        },
-        (error) => {
-          console.error('Error fetching crèches in cart', error);
-        }
-      );
-    }
+    this.isLoading = true;
+    this.error = null;
+
+    this.panierService.getCrechesInPanier().pipe(
+      catchError(error => {
+        this.error = 'Failed to load crèches. Please try again later.';
+        console.error('Error fetching crèches in cart', error);
+        return of([]);
+      }),
+      finalize(() => {
+        this.isLoading = false;
+      })
+    ).subscribe((creches: Creche[]) => {
+      this.crechesInCart = creches;
+    });
   }
 
-  removeCrecheFromCart(creche: any): void {
-    if (this.panierId !== null) {
-        this.panierService.removeCrecheFromCart(this.panierId, creche).subscribe(() => {
-            this.crechesInCart = this.crechesInCart.filter(item => item !== creche);
-        }, (error) => {
-            console.error('Error removing crèche from cart', error);
-        });
-    }
-}
+  removeCrecheFromCart(creche: any) {
+    this.isLoading = true;
+    this.panierService.removeCrecheFromCart(creche.id).subscribe(
+      () => {
+        this.crechesInCart = this.crechesInCart.filter(item => item.id !== creche.id);
+        this.isLoading = false;
+      },
+      (error) => {
+      
+        this.error = 'Failed to remove the crèche from the cart. Please try again later.';
+        this.isLoading = false;
+      }
+    );
+  }
 
-  // Handle checkout logic
+  formatPrice(tarifs: string): string {
+    const price = parseFloat(tarifs);
+    return `${price.toFixed(2)} €`;
+  }
+
   checkout(): void {
-    console.log('Proceeding to checkout...');
+    if (this.crechesInCart.length === 0) {
+      this.error = 'Your cart is empty';
+      return;
+    }
+    
+    console.log('Proceeding to checkout with items:', this.crechesInCart);
   }
 
-  // Toggle the visibility of the cart
   toggleCartVisibility(): void {
     this.isCartVisible = !this.isCartVisible;
+  }
+
+  clearError(): void {
+    this.error = null;
+  }
+
+  getTotal(): number {
+    return this.crechesInCart.length;
   }
 }

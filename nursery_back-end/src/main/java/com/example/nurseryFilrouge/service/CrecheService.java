@@ -17,6 +17,11 @@ public class CrecheService {
         return crecheRepository.save(creche);
     }
 
+
+    public List<Creche> searchCrechesByNom(String nom) {
+        return crecheRepository.findByNomContainingIgnoreCase(nom);
+    }
+
     public List<Creche> searchCreches(String ville) {
         return crecheRepository.findByVille(ville);
     }

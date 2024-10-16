@@ -14,7 +14,7 @@ public class ChildMapper {
         childDTO.setPrenom(child.getPrenom());
         childDTO.setAge(child.getAge());
 
-        // Add null checks for Parent and Creche to prevent NullPointerException
+
         if (child.getParent() != null) {
             childDTO.setParentId(child.getParent().getId());
         }

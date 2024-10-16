@@ -31,22 +31,23 @@ public class PanierService {
 
     public void removeCrecheFromCart(Long panierId, Creche creche) {
         panierRepository.findById(panierId).ifPresent(panier -> {
-            panier.getCreches().remove(creche);
-            panierRepository.save(panier);
-        });
-    }
+        panier.getCreches().remove(creche);
+        panierRepository.save(panier);
+    });
+}
 
 
-    public List<Creche> getCrechesInPanier(Long panierId) {
-        return panierRepository.findById(panierId)
-                .map(Panier::getCreches)
-                .orElse(null);
-    }
+//    public List<Creche> getCrechesInPanier(Long panierId) {
+//        return panierRepository.findById(panierId)
+//                .map(Panier::getCreches)
+//                .orElse(null);
+//    }
+public List<Creche> getAllCrechesInPanier() {
+    return panierRepository.findAllCrechesInAllPaniers();
+}
 
     public void clearPanier(Long panierId) {
-        panierRepository.findById(panierId).ifPresent(panier -> {
-            panier.getCreches().clear();
-            panierRepository.save(panier);
-        });
+        panierRepository.deleteById(panierId);
+
     }
 }

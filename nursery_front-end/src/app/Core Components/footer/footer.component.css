@@ -183,6 +183,7 @@
     @media (max-width: 991px) {
       .footer-content {
         max-width: 100%;
+        padding: 40px;
       }
 
       .footer-bottom {

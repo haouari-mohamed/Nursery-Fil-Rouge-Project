@@ -1,22 +1,60 @@
-
-<div class="cart-sidebar" *ngIf="isCartVisible">
-    <button class="close-btn" (click)="toggleCartVisibility()">✖ Close</button> <!-- Close Button -->
-  
-    <div *ngIf="crechesInCart.length > 0">
-      <h3>Your Cart</h3>
-      <ul>
-        <li *ngFor="let creche of crechesInCart">
-          <div>{{ creche.nom }}</div>
-          <button (click)="removeCrecheFromCart(creche)">Remove</button>
-        </li>
-      </ul>
-      <button (click)="checkout()">Checkout</button>
+<div class="cart-overlay" *ngIf="isCartVisible">
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart ({{ getTotal() }} items)</h3>
+      <button class="close-btn" (click)="toggleCartVisibility()">✖</button>
     </div>
-    
-    <div *ngIf="crechesInCart.length === 0">
-      <p>Your cart is empty.</p>
+
+    <!-- Error Message -->
+    <div class="error-message" *ngIf="error">
+      {{ error }}
+      <button class="close-error" (click)="clearError()">✕</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Loading your cart...</p>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="cart-content" *ngIf="!isLoading">
+      <div *ngIf="crechesInCart.length > 0; else emptyCart">
+        <ul class="cart-items">
+          <li *ngFor="let creche of crechesInCart" class="cart-item">
+            <div class="creche-info">
+              <img [src]="creche.imageUrl || 'assets/placeholder.png'" 
+                   [alt]="creche.nom"
+                   class="creche-image">
+              <div class="creche-details">
+                <h4>{{ creche.nom }}</h4>
+                <p>{{ creche.adresse }}</p>
+                <p>{{ creche.ville }}, {{ creche.codePostal }}</p>
+              </div>
+            </div>
+            <button class="remove-btn" (click)="removeCrecheFromCart(panierId)">
+              <span class="remove-icon">✕</span>
+              Remove
+            </button>
+          </li>
+        </ul>
+        
+        <div class="cart-footer">
+          <button class="checkout-btn" 
+                  (click)="checkout()"
+                  [disabled]="crechesInCart.length === 0">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+
+      <ng-template #emptyCart>
+        <div class="empty-cart">
+          <i class="empty-cart-icon">🛒</i>
+          <p>Your cart is empty</p>
+          <p class="empty-cart-subtitle">Add some crèches to get started!</p>
+        </div>
+      </ng-template>
     </div>
   </div>
-  
- 
-  
+</div>

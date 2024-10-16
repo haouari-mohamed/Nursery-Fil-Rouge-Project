@@ -1,10 +1,6 @@
 package com.example.nurseryFilrouge;
-
-import com.example.nurseryFilrouge.dtos.ChildDTO;
-import com.example.nurseryFilrouge.mappers.ChildMapper;
 import com.example.nurseryFilrouge.model.*;
 import com.example.nurseryFilrouge.model.enums.ReservationStatus;
-import com.example.nurseryFilrouge.model.enums.UserType;
 import com.example.nurseryFilrouge.repository.*;
 import com.example.nurseryFilrouge.service.*;
 import org.junit.jupiter.api.BeforeEach;

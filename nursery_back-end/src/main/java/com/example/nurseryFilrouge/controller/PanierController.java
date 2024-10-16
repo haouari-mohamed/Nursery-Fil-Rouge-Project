@@ -27,20 +27,20 @@ public class PanierController {
         panierService.addCrecheToCart(panierId, creche);
         return ResponseEntity.ok().build();
     }
+//
+//    @DeleteMapping("/{panierId}/creches")
+//    public ResponseEntity<Void> removeCrecheFromCart(@PathVariable Long panierId, @RequestBody Creche creche) {
+//        panierService.removeCrecheFromCart(panierId, creche);
+//        return ResponseEntity.ok().build();
+//    }
 
-    @DeleteMapping("/{panierId}/creches")
-    public ResponseEntity<Void> removeCrecheFromCart(@PathVariable Long panierId, @RequestBody Creche creche) {
-        panierService.removeCrecheFromCart(panierId, creche);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/{panierId}/creches")
-    public ResponseEntity<List<Creche>> getCrechesInPanier(@PathVariable Long panierId) {
-        return ResponseEntity.ok(panierService.getCrechesInPanier(panierId));
+    @GetMapping("/creches")
+    public ResponseEntity<List<Creche>> getCrechesInPanier() {
+        return ResponseEntity.ok(panierService.getAllCrechesInPanier());
     }
 
     @DeleteMapping("/{panierId}")
-    public ResponseEntity<Void> clearPanier(@PathVariable Long panierId) {
+    public ResponseEntity<Void> deleteCrecheFromCard(@PathVariable Long panierId) {
         panierService.clearPanier(panierId);
         return ResponseEntity.ok().build();
     }

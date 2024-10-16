@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface CrecheRepository extends JpaRepository<Creche, Long> {
     List<Creche> findByVille(String ville);
+    List<Creche> findByNomContainingIgnoreCase(String nom);
 }
