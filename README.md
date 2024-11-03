@@ -53,6 +53,10 @@ This platform is developed with **Angular 16** for the frontend and **Spring Boo
    ```bash
    git clone https://github.com/haouari-mohamed/Nursery-Fil-Rouge-Project.git
 ![image](https://github.com/user-attachments/assets/c1be2c7b-7049-420b-a575-c52d5383ed2a)
+![image](https://github.com/user-attachments/assets/71590743-28ef-45dd-8239-bd0f88c933af)
+![image](https://github.com/user-attachments/assets/2544146c-bb7f-40ba-9464-db80cc604dbb)
+
+
 
 
    
